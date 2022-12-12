@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="17.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <CustomBuild Include="Z:\cocos2d-lemming\proj.win32\CMakeFiles\2641d9cb2d07bcbc9ab658ef55f49e2a\SYNC_RESOURCE-gtech-lemmings.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+    <CustomBuild Include="Z:\cocos2d-lemming\CMakeLists.txt" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Z:\cocos2d-lemming\proj.win32\CMakeFiles\SYNC_RESOURCE-gtech-lemmings" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{E85EDF8A-FA76-323E-BDE3-47EC90527366}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>
