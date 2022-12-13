@@ -43,7 +43,7 @@ Size::Size(float w, float h) : width(w), height(h)
 {
 }
 
-Size::Size(const Size& other) : width(other.width), height(other.height)
+Size::Size(Vec2 other)
 {
 }
 

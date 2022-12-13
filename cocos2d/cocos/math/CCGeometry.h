@@ -63,7 +63,7 @@ public:
      */
     Size();
     Size(float width, float height);
-    Size(const Size& other);
+    Size(Vec2 other);
     explicit Size(const Vec2& point);
     /**@}*/
 
