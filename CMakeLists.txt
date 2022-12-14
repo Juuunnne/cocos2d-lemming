@@ -57,12 +57,12 @@ endif()
 # add cross-platforms source files and header files 
 list(APPEND GAME_SOURCE
      Classes/AppDelegate.cpp
-        Classes/HelloWorldScene.cpp
+        Classes/HelloWorld.cpp
         Classes/Lemming.cpp
      )
 list(APPEND GAME_HEADER
      Classes/AppDelegate.h
-        Classes/HelloWorldScene.h
+        Classes/HelloWorld.h
         Classes/Lemming.h
      )
 
@@ -122,7 +122,7 @@ endif()
 set(all_code_files
     ${GAME_HEADER}
     ${GAME_SOURCE}
-        Classes/Lemming.cpp Classes/Lemming.cpp)
+        Classes/Lemming.cpp Classes/Lemming.cpp Classes/LemmingGame.cpp Classes/LemmingGame.h Classes/LemmingGame.h Classes/LemmingGame.h)
 if(NOT ANDROID)
     add_executable(${APP_NAME} ${all_code_files})
 else()

@@ -22,12 +22,12 @@
  THE SOFTWARE.
  ****************************************************************************/
 
-#ifndef __HELLOWORLD_SCENE_H__
-#define __HELLOWORLD_SCENE_H__
+#ifndef __HELLOWORLD_H__
+#define __HELLOWORLD_H__
 
 #include "cocos2d.h"
 
-class HelloWorldScene : public cocos2d::Scene
+class HelloWorld : public cocos2d::Scene
 {
 public:
     static cocos2d::Scene* createScene();
@@ -41,7 +41,7 @@ public:
     //physics platform
 
     // implement the "static create()" method manually
-    CREATE_FUNC(HelloWorldScene);
+    CREATE_FUNC(HelloWorld);
 
 private:
     cocos2d::Size visibleSize;
@@ -50,4 +50,4 @@ private:
 
 };
 
-#endif // __HELLOWORLD_SCENE_H__
+#endif // __HELLOWORLD_H__
