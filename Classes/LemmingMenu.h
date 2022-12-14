@@ -47,6 +47,8 @@ public:
 private:
     cocos2d::Size visibleSize;
     cocos2d::Vec2 origin;
+	cocos2d::TMXTiledMap* _tileMap;
+
 };
 
 #endif // __HELLOWORLD_SCENE_H__

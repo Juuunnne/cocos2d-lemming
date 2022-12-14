@@ -1,8 +1,8 @@
-#include "LemmingMenu.h"
+#include "HelloWorldScene.h"
 
 USING_NS_CC;
 
-Scene* LemmingMenu::createScene()
+Scene* HelloWorldScene::createScene()
 {
     auto sceneMenu = Scene::create();
     return sceneMenu;
@@ -14,30 +14,37 @@ static void problemLoading(const char* filename)
     printf("Error while loading: %s\n", filename);
     printf("Depending on how you compiled you might have to add 'Resources/' in front of filenames in HelloWorldScene.cpp\n");
 }
+#include "HelloWorldScene.h"
+
+using namespace cocos2d;
+
+cocos2d::Scene* HelloWorld::createScene()
+{
+    // 'scene' is an autorelease object
+    cocos2d::Scene* scene = cocos2d::Scene::create();
+
+    // 'layer' is an autorelease object
+    HelloWorld* layer = HelloWorld::create();
+
+    // add layer as a child to scene
+    scene->addChild(layer);
+
+    // return the scene
+    return scene;
+}
 
 // on "init" you need to initialize your instance
-bool LemmingMenu::init()
+bool HelloWorld::init()
 {
-    //////////////////////////////
-    // 1. super init first
-    if ( !Scene::init() )
-    {
-        return false;
-    }
-    visibleSize = Director::getInstance()->getVisibleSize();
-    origin = Director::getInstance()->getVisibleOrigin();
+    _tileMap = cocos2d::TMXTiledMap::create("../Resources/tiled/Level1.mini.tmx");
+    cocos2d::Size mapSize = _tileMap->getMapSize();
 
-
-
-
-    this->DrawPlatform();
-    this->MenuItem();
+    this->addChild(_tileMap);
 
     return true;
 }
 
-
-void LemmingMenu::menuCloseCallback(Ref* pSender)
+void HelloWorld::menuCloseCallback(Ref* pSender)
 {
     //Close the cocos2d-x game scene and quit the application
     Director::getInstance()->end();
@@ -48,11 +55,11 @@ void LemmingMenu::menuCloseCallback(Ref* pSender)
     //_eventDispatcher->dispatchEvent(&customEndEvent);
 }
 
-void LemmingMenu::MenuItem(){
+void HelloWorld::MenuItem(){
     auto closeItem = MenuItemImage::create(
             "CloseNormal.png",
             "CloseSelected.png",
-            CC_CALLBACK_1(LemmingMenu::menuCloseCallback, this));
+            CC_CALLBACK_1(HelloWorld::menuCloseCallback, this));
 
     if (closeItem == nullptr ||
         closeItem->getContentSize().width <= 0 ||
@@ -85,7 +92,7 @@ void LemmingMenu::MenuItem(){
     }
 }
 
-void LemmingMenu::DrawPlatform() {
+void HelloWorld::DrawPlatform() {
     auto drawNode = DrawNode::create();
     drawNode->drawSolidRect(Vec2(origin.x,origin.y + 150),Vec2(300.f,200.f),Color4F::RED);
     addChild(drawNode);
