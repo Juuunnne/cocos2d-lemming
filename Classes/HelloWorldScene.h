@@ -27,7 +27,7 @@
 
 #include "cocos2d.h"
 
-class LemmingMenu : public cocos2d::Scene
+class HelloWorldScene : public cocos2d::Scene
 {
 public:
     static cocos2d::Scene* createScene();
@@ -39,10 +39,9 @@ public:
     //menu item
     void MenuItem();
     //physics platform
-    void DrawPlatform();
 
     // implement the "static create()" method manually
-    CREATE_FUNC(LemmingMenu);
+    CREATE_FUNC(HelloWorldScene);
 
 private:
     cocos2d::Size visibleSize;

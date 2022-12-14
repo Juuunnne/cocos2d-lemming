@@ -57,12 +57,12 @@ endif()
 # add cross-platforms source files and header files 
 list(APPEND GAME_SOURCE
      Classes/AppDelegate.cpp
-        Classes/LemmingMenu.cpp
+        Classes/HelloWorldScene.cpp
         Classes/Lemming.cpp
      )
 list(APPEND GAME_HEADER
      Classes/AppDelegate.h
-        Classes/LemmingMenu.h
+        Classes/HelloWorldScene.h
         Classes/Lemming.h
      )
 
