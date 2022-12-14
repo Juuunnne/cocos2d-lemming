@@ -26,39 +26,41 @@
 
 USING_NS_CC;
 
-Scene* HelloWorld::createScene()
-{
-    return HelloWorld::create();
-}
-
 // Print useful error message instead of segfaulting when files are not there.
 static void problemLoading(const char* filename)
 {
     printf("Error while loading: %s\n", filename);
     printf("Depending on how you compiled you might have to add 'Resources/' in front of filenames in HelloWorldScene.cpp\n");
 }
+#include "HelloWorldScene.h"
+
+using namespace cocos2d;
+
+cocos2d::Scene* HelloWorld::createScene()
+{
+    // 'scene' is an autorelease object
+    cocos2d::Scene* scene = cocos2d::Scene::create();
+
+    // 'layer' is an autorelease object
+    HelloWorld* layer = HelloWorld::create();
+
+    // add layer as a child to scene
+    scene->addChild(layer);
+
+    // return the scene
+    return scene;
+}
 
 // on "init" you need to initialize your instance
 bool HelloWorld::init()
 {
-    //////////////////////////////
-    // 1. super init first
-    if ( !Scene::init() )
-    {
-        return false;
-    }
-    visibleSize = Director::getInstance()->getVisibleSize();
-    origin = Director::getInstance()->getVisibleOrigin();
+    _tileMap = cocos2d::TMXTiledMap::create("../Resources/tiled/Level1.mini.tmx");
+    cocos2d::Size mapSize = _tileMap->getMapSize();
 
-
-
-
-    this->DrawPlatform();
-    this->MenuItem();
+    this->addChild(_tileMap);
 
     return true;
 }
-
 
 void HelloWorld::menuCloseCallback(Ref* pSender)
 {

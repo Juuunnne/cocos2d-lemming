@@ -1,0 +1,59 @@
+{
+    "Map/SizeTest": {
+        "height": 4300,
+        "width": 2
+    },
+    "activeFile": "",
+    "expandedProjectPaths": [
+    ],
+    "fileStates": {
+        "": {
+            "scaleInDock": 1
+        },
+        "End (Idle).tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "Gray.tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "Level1.tmx": {
+            "scale": 2.2404166666666665,
+            "selectedLayer": 2,
+            "viewCenter": {
+                "x": 250.62302399107313,
+                "y": 159.79170541193974
+            }
+        },
+        "Start (Idle).tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        },
+        "Terrain (16x16).tsx": {
+            "scaleInDock": 1,
+            "scaleInEditor": 1
+        }
+    },
+    "last.exportedFilePath": "Z:/cocos2d-lemming/Resources/tiled",
+    "last.imagePath": "Z:/cocos2d-lemming/Resources/assets/Items/Checkpoints/Start",
+    "map.lastUsedExportFilter": "Tous les Fichiers (*)",
+    "map.lastUsedFormat": "tmx",
+    "map.tileHeight": 16,
+    "map.tileWidth": 16,
+    "openFiles": [
+    ],
+    "project": "tiledProj.tiled-project",
+    "recentFiles": [
+        "Start (Idle).tsx",
+        "End (Idle).tsx",
+        "Level1.tmx",
+        "Terrain (16x16).tsx",
+        "Gray.tsx"
+    ],
+    "tileset.lastUsedFormat": "tsx",
+    "tileset.tileSize": {
+        "height": 16,
+        "width": 16
+    }
+}
