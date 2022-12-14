@@ -811,13 +811,13 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
   <ItemGroup>
     <ClInclude Include="..\Classes\Lemming.h" />
     <ClInclude Include="..\Classes\LemmingGame.h" />
+    <ClInclude Include="..\Classes\HelloWorld.h" />
     <ClInclude Include="Z:\cocos2d-lemming\Classes\AppDelegate.h" />
-    <ClInclude Include="Z:\cocos2d-lemming\Classes\HelloWorldScene.h" />
     <ClInclude Include="Z:\cocos2d-lemming\proj.win32\main.h" />
     <ClInclude Include="Z:\cocos2d-lemming\proj.win32\resource.h" />
     <ClCompile Include="..\Classes\LemmingGame.cpp" />
+    <ClCompile Include="..\Classes\HelloWorld.cpp" />
     <ClCompile Include="Z:\cocos2d-lemming\Classes\AppDelegate.cpp" />
-    <ClCompile Include="Z:\cocos2d-lemming\Classes\HelloWorldScene.cpp" />
     <ClCompile Include="Z:\cocos2d-lemming\proj.win32\main.cpp" />
     <ResourceCompile Include="Z:\cocos2d-lemming\proj.win32\game.rc" />
     <ClInclude Include="Z:\cocos2d-lemming\Resources\CloseNormal.png" />
