@@ -4,7 +4,7 @@
 class Lemming : public cocos2d::Sprite
 {
 public:
-	Lemming(std::string filename, cocos2d::Vec2 position, bool direction);
+	Lemming(cocos2d::Vec2 position, bool direction);
 	~Lemming ();
 	
 	void Update();
