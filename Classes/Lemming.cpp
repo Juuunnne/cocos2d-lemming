@@ -4,9 +4,10 @@
 #define NORMAL_SPEED 10
 #define FAST_SPEED 30
 
-Lemming::Lemming(std::string filename, cocos2d::Vec2 position, bool direction)
+Lemming::Lemming(cocos2d::Vec2 position, bool direction)
 {
-	this->initWithFile(filename);
+	this->initWithFile("lemmings.png");
+	this->setTextureRect(cocos2d::Rect(0, 0, 15, 15));
 	this->setPosition(position);
 	this->direction = direction;
 	this->Update();
