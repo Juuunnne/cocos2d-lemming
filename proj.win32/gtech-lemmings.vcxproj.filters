@@ -4,13 +4,13 @@
     <ClCompile Include="Z:\cocos2d-lemming\Classes\AppDelegate.cpp">
       <Filter>Source Files\Classes</Filter>
     </ClCompile>
-    <ClCompile Include="Z:\cocos2d-lemming\Classes\HelloWorldScene.cpp">
+    <ClCompile Include="Z:\cocos2d-lemming\Classes\Lemming.cpp">
       <Filter>Source Files\Classes</Filter>
     </ClCompile>
     <ClCompile Include="Z:\cocos2d-lemming\proj.win32\main.cpp">
       <Filter>Source Files\proj.win32</Filter>
     </ClCompile>
-    <ClCompile Include="Z:\cocos2d-lemming\Classes\Lemming.cpp">
+    <ClCompile Include="Z:\cocos2d-lemming\Classes\LemmingGame.cpp">
       <Filter>Source Files\Classes</Filter>
     </ClCompile>
     <ClCompile Include="Z:\cocos2d-lemming\cocos2d\cocos\precheader.cpp">
@@ -21,7 +21,7 @@
     <ClInclude Include="Z:\cocos2d-lemming\Classes\AppDelegate.h">
       <Filter>Source Files\Classes</Filter>
     </ClInclude>
-    <ClInclude Include="Z:\cocos2d-lemming\Classes\HelloWorldScene.h">
+    <ClInclude Include="Z:\cocos2d-lemming\Classes\Lemming.h">
       <Filter>Source Files\Classes</Filter>
     </ClInclude>
     <ClInclude Include="Z:\cocos2d-lemming\proj.win32\main.h">
@@ -39,14 +39,566 @@
     <ClInclude Include="Z:\cocos2d-lemming\Resources\HelloWorld.png">
       <Filter>Resources</Filter>
     </ClInclude>
+    <ClInclude Include="Z:\cocos2d-lemming\Resources\TileMap.tmx">
+      <Filter>Resources</Filter>
+    </ClInclude>
+    <ClInclude Include="Z:\cocos2d-lemming\Resources\assets\Background\Blue.png">
+      <Filter>Resources\assets\Background</Filter>
+    </ClInclude>
+    <ClInclude Include="Z:\cocos2d-lemming\Resources\assets\Background\Brown.png">
+      <Filter>Resources\assets\Background</Filter>
+    </ClInclude>
+    <ClInclude Include="Z:\cocos2d-lemming\Resources\assets\Background\Gray.png">
+      <Filter>Resources\assets\Background</Filter>
+    </ClInclude>
+    <ClInclude Include="Z:\cocos2d-lemming\Resources\assets\Background\Green.png">
+      <Filter>Resources\assets\Background</Filter>
+    </ClInclude>
+    <ClInclude Include="Z:\cocos2d-lemming\Resources\assets\Background\Pink.png">
+      <Filter>Resources\assets\Background</Filter>
+    </ClInclude>
+    <ClInclude Include="Z:\cocos2d-lemming\Resources\assets\Background\Purple.png">
+      <Filter>Resources\assets\Background</Filter>
+    </ClInclude>
+    <ClInclude Include="Z:\cocos2d-lemming\Resources\assets\Background\Yellow.png">
+      <Filter>Resources\assets\Background</Filter>
+    </ClInclude>
+    <ClInclude Include="Z:\cocos2d-lemming\Resources\assets\Items\Boxes\Box1\Break.png">
+      <Filter>Resources\assets\Items\Boxes\Box1</Filter>
+    </ClInclude>
+    <ClInclude Include="Z:\cocos2d-lemming\Resources\assets\Items\Boxes\Box1\Hit (28x24).png">
+      <Filter>Resources\assets\Items\Boxes\Box1</Filter>
+    </ClInclude>
+    <ClInclude Include="Z:\cocos2d-lemming\Resources\assets\Items\Boxes\Box1\Idle.png">
+      <Filter>Resources\assets\Items\Boxes\Box1</Filter>
+    </ClInclude>
+    <ClInclude Include="Z:\cocos2d-lemming\Resources\assets\Items\Boxes\Box2\Break.png">
+      <Filter>Resources\assets\Items\Boxes\Box2</Filter>
+    </ClInclude>
+    <ClInclude Include="Z:\cocos2d-lemming\Resources\assets\Items\Boxes\Box2\Hit (28x24).png">
+      <Filter>Resources\assets\Items\Boxes\Box2</Filter>
+    </ClInclude>
+    <ClInclude Include="Z:\cocos2d-lemming\Resources\assets\Items\Boxes\Box2\Idle.png">
+      <Filter>Resources\assets\Items\Boxes\Box2</Filter>
+    </ClInclude>
+    <ClInclude Include="Z:\cocos2d-lemming\Resources\assets\Items\Boxes\Box3\Break.png">
+      <Filter>Resources\assets\Items\Boxes\Box3</Filter>
+    </ClInclude>
+    <ClInclude Include="Z:\cocos2d-lemming\Resources\assets\Items\Boxes\Box3\Hit (28x24).png">
+      <Filter>Resources\assets\Items\Boxes\Box3</Filter>
+    </ClInclude>
+    <ClInclude Include="Z:\cocos2d-lemming\Resources\assets\Items\Boxes\Box3\Idle.png">
+      <Filter>Resources\assets\Items\Boxes\Box3</Filter>
+    </ClInclude>
+    <ClInclude Include="Z:\cocos2d-lemming\Resources\assets\Items\Checkpoints\Checkpoint\Checkpoint (Flag Idle)(64x64).png">
+      <Filter>Resources\assets\Items\Checkpoints\Checkpoint</Filter>
+    </ClInclude>
+    <ClInclude Include="Z:\cocos2d-lemming\Resources\assets\Items\Checkpoints\Checkpoint\Checkpoint (Flag Out) (64x64).png">
+      <Filter>Resources\assets\Items\Checkpoints\Checkpoint</Filter>
+    </ClInclude>
+    <ClInclude Include="Z:\cocos2d-lemming\Resources\assets\Items\Checkpoints\Checkpoint\Checkpoint (No Flag).png">
+      <Filter>Resources\assets\Items\Checkpoints\Checkpoint</Filter>
+    </ClInclude>
+    <ClInclude Include="Z:\cocos2d-lemming\Resources\assets\Items\Checkpoints\End\End (Idle).png">
+      <Filter>Resources\assets\Items\Checkpoints\End</Filter>
+    </ClInclude>
+    <ClInclude Include="Z:\cocos2d-lemming\Resources\assets\Items\Checkpoints\End\End (Pressed) (64x64).png">
+      <Filter>Resources\assets\Items\Checkpoints\End</Filter>
+    </ClInclude>
+    <ClInclude Include="Z:\cocos2d-lemming\Resources\assets\Items\Checkpoints\Start\Start (Idle).png">
+      <Filter>Resources\assets\Items\Checkpoints\Start</Filter>
+    </ClInclude>
+    <ClInclude Include="Z:\cocos2d-lemming\Resources\assets\Items\Checkpoints\Start\Start (Moving) (64x64).png">
+      <Filter>Resources\assets\Items\Checkpoints\Start</Filter>
+    </ClInclude>
+    <ClInclude Include="Z:\cocos2d-lemming\Resources\assets\Items\Fruits\Apple.png">
+      <Filter>Resources\assets\Items\Fruits</Filter>
+    </ClInclude>
+    <ClInclude Include="Z:\cocos2d-lemming\Resources\assets\Items\Fruits\Bananas.png">
+      <Filter>Resources\assets\Items\Fruits</Filter>
+    </ClInclude>
+    <ClInclude Include="Z:\cocos2d-lemming\Resources\assets\Items\Fruits\Cherries.png">
+      <Filter>Resources\assets\Items\Fruits</Filter>
+    </ClInclude>
+    <ClInclude Include="Z:\cocos2d-lemming\Resources\assets\Items\Fruits\Collected.png">
+      <Filter>Resources\assets\Items\Fruits</Filter>
+    </ClInclude>
+    <ClInclude Include="Z:\cocos2d-lemming\Resources\assets\Items\Fruits\Kiwi.png">
+      <Filter>Resources\assets\Items\Fruits</Filter>
+    </ClInclude>
+    <ClInclude Include="Z:\cocos2d-lemming\Resources\assets\Items\Fruits\Melon.png">
+      <Filter>Resources\assets\Items\Fruits</Filter>
+    </ClInclude>
+    <ClInclude Include="Z:\cocos2d-lemming\Resources\assets\Items\Fruits\Orange.png">
+      <Filter>Resources\assets\Items\Fruits</Filter>
+    </ClInclude>
+    <ClInclude Include="Z:\cocos2d-lemming\Resources\assets\Items\Fruits\Pineapple.png">
+      <Filter>Resources\assets\Items\Fruits</Filter>
+    </ClInclude>
+    <ClInclude Include="Z:\cocos2d-lemming\Resources\assets\Items\Fruits\Strawberry.png">
+      <Filter>Resources\assets\Items\Fruits</Filter>
+    </ClInclude>
+    <ClInclude Include="Z:\cocos2d-lemming\Resources\assets\Main Characters\Appearing (96x96).png">
+      <Filter>Resources\assets\Main Characters</Filter>
+    </ClInclude>
+    <ClInclude Include="Z:\cocos2d-lemming\Resources\assets\Main Characters\Desappearing (96x96).png">
+      <Filter>Resources\assets\Main Characters</Filter>
+    </ClInclude>
+    <ClInclude Include="Z:\cocos2d-lemming\Resources\assets\Main Characters\Mask Dude\Double Jump (32x32).png">
+      <Filter>Resources\assets\Main Characters\Mask Dude</Filter>
+    </ClInclude>
+    <ClInclude Include="Z:\cocos2d-lemming\Resources\assets\Main Characters\Mask Dude\Fall (32x32).png">
+      <Filter>Resources\assets\Main Characters\Mask Dude</Filter>
+    </ClInclude>
+    <ClInclude Include="Z:\cocos2d-lemming\Resources\assets\Main Characters\Mask Dude\Hit (32x32).png">
+      <Filter>Resources\assets\Main Characters\Mask Dude</Filter>
+    </ClInclude>
+    <ClInclude Include="Z:\cocos2d-lemming\Resources\assets\Main Characters\Mask Dude\Idle (32x32).png">
+      <Filter>Resources\assets\Main Characters\Mask Dude</Filter>
+    </ClInclude>
+    <ClInclude Include="Z:\cocos2d-lemming\Resources\assets\Main Characters\Mask Dude\Jump (32x32).png">
+      <Filter>Resources\assets\Main Characters\Mask Dude</Filter>
+    </ClInclude>
+    <ClInclude Include="Z:\cocos2d-lemming\Resources\assets\Main Characters\Mask Dude\Run (32x32).png">
+      <Filter>Resources\assets\Main Characters\Mask Dude</Filter>
+    </ClInclude>
+    <ClInclude Include="Z:\cocos2d-lemming\Resources\assets\Main Characters\Mask Dude\Wall Jump (32x32).png">
+      <Filter>Resources\assets\Main Characters\Mask Dude</Filter>
+    </ClInclude>
+    <ClInclude Include="Z:\cocos2d-lemming\Resources\assets\Main Characters\Ninja Frog\Double Jump (32x32).png">
+      <Filter>Resources\assets\Main Characters\Ninja Frog</Filter>
+    </ClInclude>
+    <ClInclude Include="Z:\cocos2d-lemming\Resources\assets\Main Characters\Ninja Frog\Fall (32x32).png">
+      <Filter>Resources\assets\Main Characters\Ninja Frog</Filter>
+    </ClInclude>
+    <ClInclude Include="Z:\cocos2d-lemming\Resources\assets\Main Characters\Ninja Frog\Hit (32x32).png">
+      <Filter>Resources\assets\Main Characters\Ninja Frog</Filter>
+    </ClInclude>
+    <ClInclude Include="Z:\cocos2d-lemming\Resources\assets\Main Characters\Ninja Frog\Idle (32x32).png">
+      <Filter>Resources\assets\Main Characters\Ninja Frog</Filter>
+    </ClInclude>
+    <ClInclude Include="Z:\cocos2d-lemming\Resources\assets\Main Characters\Ninja Frog\Jump (32x32).png">
+      <Filter>Resources\assets\Main Characters\Ninja Frog</Filter>
+    </ClInclude>
+    <ClInclude Include="Z:\cocos2d-lemming\Resources\assets\Main Characters\Ninja Frog\Run (32x32).png">
+      <Filter>Resources\assets\Main Characters\Ninja Frog</Filter>
+    </ClInclude>
+    <ClInclude Include="Z:\cocos2d-lemming\Resources\assets\Main Characters\Ninja Frog\Wall Jump (32x32).png">
+      <Filter>Resources\assets\Main Characters\Ninja Frog</Filter>
+    </ClInclude>
+    <ClInclude Include="Z:\cocos2d-lemming\Resources\assets\Main Characters\Pink Man\Double Jump (32x32).png">
+      <Filter>Resources\assets\Main Characters\Pink Man</Filter>
+    </ClInclude>
+    <ClInclude Include="Z:\cocos2d-lemming\Resources\assets\Main Characters\Pink Man\Fall (32x32).png">
+      <Filter>Resources\assets\Main Characters\Pink Man</Filter>
+    </ClInclude>
+    <ClInclude Include="Z:\cocos2d-lemming\Resources\assets\Main Characters\Pink Man\Hit (32x32).png">
+      <Filter>Resources\assets\Main Characters\Pink Man</Filter>
+    </ClInclude>
+    <ClInclude Include="Z:\cocos2d-lemming\Resources\assets\Main Characters\Pink Man\Idle (32x32).png">
+      <Filter>Resources\assets\Main Characters\Pink Man</Filter>
+    </ClInclude>
+    <ClInclude Include="Z:\cocos2d-lemming\Resources\assets\Main Characters\Pink Man\Jump (32x32).png">
+      <Filter>Resources\assets\Main Characters\Pink Man</Filter>
+    </ClInclude>
+    <ClInclude Include="Z:\cocos2d-lemming\Resources\assets\Main Characters\Pink Man\Run (32x32).png">
+      <Filter>Resources\assets\Main Characters\Pink Man</Filter>
+    </ClInclude>
+    <ClInclude Include="Z:\cocos2d-lemming\Resources\assets\Main Characters\Pink Man\Wall Jump (32x32).png">
+      <Filter>Resources\assets\Main Characters\Pink Man</Filter>
+    </ClInclude>
+    <ClInclude Include="Z:\cocos2d-lemming\Resources\assets\Main Characters\Virtual Guy\Double Jump (32x32).png">
+      <Filter>Resources\assets\Main Characters\Virtual Guy</Filter>
+    </ClInclude>
+    <ClInclude Include="Z:\cocos2d-lemming\Resources\assets\Main Characters\Virtual Guy\Fall (32x32).png">
+      <Filter>Resources\assets\Main Characters\Virtual Guy</Filter>
+    </ClInclude>
+    <ClInclude Include="Z:\cocos2d-lemming\Resources\assets\Main Characters\Virtual Guy\Hit (32x32).png">
+      <Filter>Resources\assets\Main Characters\Virtual Guy</Filter>
+    </ClInclude>
+    <ClInclude Include="Z:\cocos2d-lemming\Resources\assets\Main Characters\Virtual Guy\Idle (32x32).png">
+      <Filter>Resources\assets\Main Characters\Virtual Guy</Filter>
+    </ClInclude>
+    <ClInclude Include="Z:\cocos2d-lemming\Resources\assets\Main Characters\Virtual Guy\Jump (32x32).png">
+      <Filter>Resources\assets\Main Characters\Virtual Guy</Filter>
+    </ClInclude>
+    <ClInclude Include="Z:\cocos2d-lemming\Resources\assets\Main Characters\Virtual Guy\Run (32x32).png">
+      <Filter>Resources\assets\Main Characters\Virtual Guy</Filter>
+    </ClInclude>
+    <ClInclude Include="Z:\cocos2d-lemming\Resources\assets\Main Characters\Virtual Guy\Wall Jump (32x32).png">
+      <Filter>Resources\assets\Main Characters\Virtual Guy</Filter>
+    </ClInclude>
+    <ClInclude Include="Z:\cocos2d-lemming\Resources\assets\Menu\Buttons\Achievements.png">
+      <Filter>Resources\assets\Menu\Buttons</Filter>
+    </ClInclude>
+    <ClInclude Include="Z:\cocos2d-lemming\Resources\assets\Menu\Buttons\Back.png">
+      <Filter>Resources\assets\Menu\Buttons</Filter>
+    </ClInclude>
+    <ClInclude Include="Z:\cocos2d-lemming\Resources\assets\Menu\Buttons\Close.png">
+      <Filter>Resources\assets\Menu\Buttons</Filter>
+    </ClInclude>
+    <ClInclude Include="Z:\cocos2d-lemming\Resources\assets\Menu\Buttons\Leaderboard.png">
+      <Filter>Resources\assets\Menu\Buttons</Filter>
+    </ClInclude>
+    <ClInclude Include="Z:\cocos2d-lemming\Resources\assets\Menu\Buttons\Levels.png">
+      <Filter>Resources\assets\Menu\Buttons</Filter>
+    </ClInclude>
+    <ClInclude Include="Z:\cocos2d-lemming\Resources\assets\Menu\Buttons\Next.png">
+      <Filter>Resources\assets\Menu\Buttons</Filter>
+    </ClInclude>
+    <ClInclude Include="Z:\cocos2d-lemming\Resources\assets\Menu\Buttons\Play.png">
+      <Filter>Resources\assets\Menu\Buttons</Filter>
+    </ClInclude>
+    <ClInclude Include="Z:\cocos2d-lemming\Resources\assets\Menu\Buttons\Previous.png">
+      <Filter>Resources\assets\Menu\Buttons</Filter>
+    </ClInclude>
+    <ClInclude Include="Z:\cocos2d-lemming\Resources\assets\Menu\Buttons\Restart.png">
+      <Filter>Resources\assets\Menu\Buttons</Filter>
+    </ClInclude>
+    <ClInclude Include="Z:\cocos2d-lemming\Resources\assets\Menu\Buttons\Settings.png">
+      <Filter>Resources\assets\Menu\Buttons</Filter>
+    </ClInclude>
+    <ClInclude Include="Z:\cocos2d-lemming\Resources\assets\Menu\Buttons\Volume.png">
+      <Filter>Resources\assets\Menu\Buttons</Filter>
+    </ClInclude>
+    <ClInclude Include="Z:\cocos2d-lemming\Resources\assets\Menu\Levels\01.png">
+      <Filter>Resources\assets\Menu\Levels</Filter>
+    </ClInclude>
+    <ClInclude Include="Z:\cocos2d-lemming\Resources\assets\Menu\Levels\02.png">
+      <Filter>Resources\assets\Menu\Levels</Filter>
+    </ClInclude>
+    <ClInclude Include="Z:\cocos2d-lemming\Resources\assets\Menu\Levels\03.png">
+      <Filter>Resources\assets\Menu\Levels</Filter>
+    </ClInclude>
+    <ClInclude Include="Z:\cocos2d-lemming\Resources\assets\Menu\Levels\04.png">
+      <Filter>Resources\assets\Menu\Levels</Filter>
+    </ClInclude>
+    <ClInclude Include="Z:\cocos2d-lemming\Resources\assets\Menu\Levels\05.png">
+      <Filter>Resources\assets\Menu\Levels</Filter>
+    </ClInclude>
+    <ClInclude Include="Z:\cocos2d-lemming\Resources\assets\Menu\Levels\06.png">
+      <Filter>Resources\assets\Menu\Levels</Filter>
+    </ClInclude>
+    <ClInclude Include="Z:\cocos2d-lemming\Resources\assets\Menu\Levels\07.png">
+      <Filter>Resources\assets\Menu\Levels</Filter>
+    </ClInclude>
+    <ClInclude Include="Z:\cocos2d-lemming\Resources\assets\Menu\Levels\08.png">
+      <Filter>Resources\assets\Menu\Levels</Filter>
+    </ClInclude>
+    <ClInclude Include="Z:\cocos2d-lemming\Resources\assets\Menu\Levels\09.png">
+      <Filter>Resources\assets\Menu\Levels</Filter>
+    </ClInclude>
+    <ClInclude Include="Z:\cocos2d-lemming\Resources\assets\Menu\Levels\10.png">
+      <Filter>Resources\assets\Menu\Levels</Filter>
+    </ClInclude>
+    <ClInclude Include="Z:\cocos2d-lemming\Resources\assets\Menu\Levels\11.png">
+      <Filter>Resources\assets\Menu\Levels</Filter>
+    </ClInclude>
+    <ClInclude Include="Z:\cocos2d-lemming\Resources\assets\Menu\Levels\12.png">
+      <Filter>Resources\assets\Menu\Levels</Filter>
+    </ClInclude>
+    <ClInclude Include="Z:\cocos2d-lemming\Resources\assets\Menu\Levels\13.png">
+      <Filter>Resources\assets\Menu\Levels</Filter>
+    </ClInclude>
+    <ClInclude Include="Z:\cocos2d-lemming\Resources\assets\Menu\Levels\14.png">
+      <Filter>Resources\assets\Menu\Levels</Filter>
+    </ClInclude>
+    <ClInclude Include="Z:\cocos2d-lemming\Resources\assets\Menu\Levels\15.png">
+      <Filter>Resources\assets\Menu\Levels</Filter>
+    </ClInclude>
+    <ClInclude Include="Z:\cocos2d-lemming\Resources\assets\Menu\Levels\16.png">
+      <Filter>Resources\assets\Menu\Levels</Filter>
+    </ClInclude>
+    <ClInclude Include="Z:\cocos2d-lemming\Resources\assets\Menu\Levels\17.png">
+      <Filter>Resources\assets\Menu\Levels</Filter>
+    </ClInclude>
+    <ClInclude Include="Z:\cocos2d-lemming\Resources\assets\Menu\Levels\18.png">
+      <Filter>Resources\assets\Menu\Levels</Filter>
+    </ClInclude>
+    <ClInclude Include="Z:\cocos2d-lemming\Resources\assets\Menu\Levels\19.png">
+      <Filter>Resources\assets\Menu\Levels</Filter>
+    </ClInclude>
+    <ClInclude Include="Z:\cocos2d-lemming\Resources\assets\Menu\Levels\20.png">
+      <Filter>Resources\assets\Menu\Levels</Filter>
+    </ClInclude>
+    <ClInclude Include="Z:\cocos2d-lemming\Resources\assets\Menu\Levels\21.png">
+      <Filter>Resources\assets\Menu\Levels</Filter>
+    </ClInclude>
+    <ClInclude Include="Z:\cocos2d-lemming\Resources\assets\Menu\Levels\22.png">
+      <Filter>Resources\assets\Menu\Levels</Filter>
+    </ClInclude>
+    <ClInclude Include="Z:\cocos2d-lemming\Resources\assets\Menu\Levels\23.png">
+      <Filter>Resources\assets\Menu\Levels</Filter>
+    </ClInclude>
+    <ClInclude Include="Z:\cocos2d-lemming\Resources\assets\Menu\Levels\24.png">
+      <Filter>Resources\assets\Menu\Levels</Filter>
+    </ClInclude>
+    <ClInclude Include="Z:\cocos2d-lemming\Resources\assets\Menu\Levels\25.png">
+      <Filter>Resources\assets\Menu\Levels</Filter>
+    </ClInclude>
+    <ClInclude Include="Z:\cocos2d-lemming\Resources\assets\Menu\Levels\26.png">
+      <Filter>Resources\assets\Menu\Levels</Filter>
+    </ClInclude>
+    <ClInclude Include="Z:\cocos2d-lemming\Resources\assets\Menu\Levels\27.png">
+      <Filter>Resources\assets\Menu\Levels</Filter>
+    </ClInclude>
+    <ClInclude Include="Z:\cocos2d-lemming\Resources\assets\Menu\Levels\28.png">
+      <Filter>Resources\assets\Menu\Levels</Filter>
+    </ClInclude>
+    <ClInclude Include="Z:\cocos2d-lemming\Resources\assets\Menu\Levels\29.png">
+      <Filter>Resources\assets\Menu\Levels</Filter>
+    </ClInclude>
+    <ClInclude Include="Z:\cocos2d-lemming\Resources\assets\Menu\Levels\30.png">
+      <Filter>Resources\assets\Menu\Levels</Filter>
+    </ClInclude>
+    <ClInclude Include="Z:\cocos2d-lemming\Resources\assets\Menu\Levels\31.png">
+      <Filter>Resources\assets\Menu\Levels</Filter>
+    </ClInclude>
+    <ClInclude Include="Z:\cocos2d-lemming\Resources\assets\Menu\Levels\32.png">
+      <Filter>Resources\assets\Menu\Levels</Filter>
+    </ClInclude>
+    <ClInclude Include="Z:\cocos2d-lemming\Resources\assets\Menu\Levels\33.png">
+      <Filter>Resources\assets\Menu\Levels</Filter>
+    </ClInclude>
+    <ClInclude Include="Z:\cocos2d-lemming\Resources\assets\Menu\Levels\34.png">
+      <Filter>Resources\assets\Menu\Levels</Filter>
+    </ClInclude>
+    <ClInclude Include="Z:\cocos2d-lemming\Resources\assets\Menu\Levels\35.png">
+      <Filter>Resources\assets\Menu\Levels</Filter>
+    </ClInclude>
+    <ClInclude Include="Z:\cocos2d-lemming\Resources\assets\Menu\Levels\36.png">
+      <Filter>Resources\assets\Menu\Levels</Filter>
+    </ClInclude>
+    <ClInclude Include="Z:\cocos2d-lemming\Resources\assets\Menu\Levels\37.png">
+      <Filter>Resources\assets\Menu\Levels</Filter>
+    </ClInclude>
+    <ClInclude Include="Z:\cocos2d-lemming\Resources\assets\Menu\Levels\38.png">
+      <Filter>Resources\assets\Menu\Levels</Filter>
+    </ClInclude>
+    <ClInclude Include="Z:\cocos2d-lemming\Resources\assets\Menu\Levels\39.png">
+      <Filter>Resources\assets\Menu\Levels</Filter>
+    </ClInclude>
+    <ClInclude Include="Z:\cocos2d-lemming\Resources\assets\Menu\Levels\40.png">
+      <Filter>Resources\assets\Menu\Levels</Filter>
+    </ClInclude>
+    <ClInclude Include="Z:\cocos2d-lemming\Resources\assets\Menu\Levels\41.png">
+      <Filter>Resources\assets\Menu\Levels</Filter>
+    </ClInclude>
+    <ClInclude Include="Z:\cocos2d-lemming\Resources\assets\Menu\Levels\42.png">
+      <Filter>Resources\assets\Menu\Levels</Filter>
+    </ClInclude>
+    <ClInclude Include="Z:\cocos2d-lemming\Resources\assets\Menu\Levels\43.png">
+      <Filter>Resources\assets\Menu\Levels</Filter>
+    </ClInclude>
+    <ClInclude Include="Z:\cocos2d-lemming\Resources\assets\Menu\Levels\44.png">
+      <Filter>Resources\assets\Menu\Levels</Filter>
+    </ClInclude>
+    <ClInclude Include="Z:\cocos2d-lemming\Resources\assets\Menu\Levels\45.png">
+      <Filter>Resources\assets\Menu\Levels</Filter>
+    </ClInclude>
+    <ClInclude Include="Z:\cocos2d-lemming\Resources\assets\Menu\Levels\46.png">
+      <Filter>Resources\assets\Menu\Levels</Filter>
+    </ClInclude>
+    <ClInclude Include="Z:\cocos2d-lemming\Resources\assets\Menu\Levels\47.png">
+      <Filter>Resources\assets\Menu\Levels</Filter>
+    </ClInclude>
+    <ClInclude Include="Z:\cocos2d-lemming\Resources\assets\Menu\Levels\48.png">
+      <Filter>Resources\assets\Menu\Levels</Filter>
+    </ClInclude>
+    <ClInclude Include="Z:\cocos2d-lemming\Resources\assets\Menu\Levels\49.png">
+      <Filter>Resources\assets\Menu\Levels</Filter>
+    </ClInclude>
+    <ClInclude Include="Z:\cocos2d-lemming\Resources\assets\Menu\Levels\50.png">
+      <Filter>Resources\assets\Menu\Levels</Filter>
+    </ClInclude>
+    <ClInclude Include="Z:\cocos2d-lemming\Resources\assets\Menu\Text\Text (Black) (8x10).png">
+      <Filter>Resources\assets\Menu\Text</Filter>
+    </ClInclude>
+    <ClInclude Include="Z:\cocos2d-lemming\Resources\assets\Menu\Text\Text (White) (8x10).png">
+      <Filter>Resources\assets\Menu\Text</Filter>
+    </ClInclude>
+    <ClInclude Include="Z:\cocos2d-lemming\Resources\assets\Other\Confetti (16x16).png">
+      <Filter>Resources\assets\Other</Filter>
+    </ClInclude>
+    <ClInclude Include="Z:\cocos2d-lemming\Resources\assets\Other\Dust Particle.png">
+      <Filter>Resources\assets\Other</Filter>
+    </ClInclude>
+    <ClInclude Include="Z:\cocos2d-lemming\Resources\assets\Other\Shadow.png">
+      <Filter>Resources\assets\Other</Filter>
+    </ClInclude>
+    <ClInclude Include="Z:\cocos2d-lemming\Resources\assets\Other\Transition.png">
+      <Filter>Resources\assets\Other</Filter>
+    </ClInclude>
+    <ClInclude Include="Z:\cocos2d-lemming\Resources\assets\Terrain\Terrain (16x16).png">
+      <Filter>Resources\assets\Terrain</Filter>
+    </ClInclude>
+    <ClInclude Include="Z:\cocos2d-lemming\Resources\assets\Traps\Arrow\Hit (18x18).png">
+      <Filter>Resources\assets\Traps\Arrow</Filter>
+    </ClInclude>
+    <ClInclude Include="Z:\cocos2d-lemming\Resources\assets\Traps\Arrow\Idle (18x18).png">
+      <Filter>Resources\assets\Traps\Arrow</Filter>
+    </ClInclude>
+    <ClInclude Include="Z:\cocos2d-lemming\Resources\assets\Traps\Blocks\HitSide (22x22).png">
+      <Filter>Resources\assets\Traps\Blocks</Filter>
+    </ClInclude>
+    <ClInclude Include="Z:\cocos2d-lemming\Resources\assets\Traps\Blocks\HitTop (22x22).png">
+      <Filter>Resources\assets\Traps\Blocks</Filter>
+    </ClInclude>
+    <ClInclude Include="Z:\cocos2d-lemming\Resources\assets\Traps\Blocks\Idle.png">
+      <Filter>Resources\assets\Traps\Blocks</Filter>
+    </ClInclude>
+    <ClInclude Include="Z:\cocos2d-lemming\Resources\assets\Traps\Blocks\Part 1 (22x22).png">
+      <Filter>Resources\assets\Traps\Blocks</Filter>
+    </ClInclude>
+    <ClInclude Include="Z:\cocos2d-lemming\Resources\assets\Traps\Blocks\Part 2 (22x22).png">
+      <Filter>Resources\assets\Traps\Blocks</Filter>
+    </ClInclude>
+    <ClInclude Include="Z:\cocos2d-lemming\Resources\assets\Traps\Falling Platforms\Off.png">
+      <Filter>Resources\assets\Traps\Falling Platforms</Filter>
+    </ClInclude>
+    <ClInclude Include="Z:\cocos2d-lemming\Resources\assets\Traps\Falling Platforms\On (32x10).png">
+      <Filter>Resources\assets\Traps\Falling Platforms</Filter>
+    </ClInclude>
+    <ClInclude Include="Z:\cocos2d-lemming\Resources\assets\Traps\Fan\Off.png">
+      <Filter>Resources\assets\Traps\Fan</Filter>
+    </ClInclude>
+    <ClInclude Include="Z:\cocos2d-lemming\Resources\assets\Traps\Fan\On (24x8).png">
+      <Filter>Resources\assets\Traps\Fan</Filter>
+    </ClInclude>
+    <ClInclude Include="Z:\cocos2d-lemming\Resources\assets\Traps\Fire\Hit (16x32).png">
+      <Filter>Resources\assets\Traps\Fire</Filter>
+    </ClInclude>
+    <ClInclude Include="Z:\cocos2d-lemming\Resources\assets\Traps\Fire\Off.png">
+      <Filter>Resources\assets\Traps\Fire</Filter>
+    </ClInclude>
+    <ClInclude Include="Z:\cocos2d-lemming\Resources\assets\Traps\Fire\On (16x32).png">
+      <Filter>Resources\assets\Traps\Fire</Filter>
+    </ClInclude>
+    <ClInclude Include="Z:\cocos2d-lemming\Resources\assets\Traps\Platforms\Brown Off.png">
+      <Filter>Resources\assets\Traps\Platforms</Filter>
+    </ClInclude>
+    <ClInclude Include="Z:\cocos2d-lemming\Resources\assets\Traps\Platforms\Brown On (32x8).png">
+      <Filter>Resources\assets\Traps\Platforms</Filter>
+    </ClInclude>
+    <ClInclude Include="Z:\cocos2d-lemming\Resources\assets\Traps\Platforms\Chain.png">
+      <Filter>Resources\assets\Traps\Platforms</Filter>
+    </ClInclude>
+    <ClInclude Include="Z:\cocos2d-lemming\Resources\assets\Traps\Platforms\Grey Off.png">
+      <Filter>Resources\assets\Traps\Platforms</Filter>
+    </ClInclude>
+    <ClInclude Include="Z:\cocos2d-lemming\Resources\assets\Traps\Platforms\Grey On (32x8).png">
+      <Filter>Resources\assets\Traps\Platforms</Filter>
+    </ClInclude>
+    <ClInclude Include="Z:\cocos2d-lemming\Resources\assets\Traps\Rock Head\Blink (42x42).png">
+      <Filter>Resources\assets\Traps\Rock Head</Filter>
+    </ClInclude>
+    <ClInclude Include="Z:\cocos2d-lemming\Resources\assets\Traps\Rock Head\Bottom Hit (42x42).png">
+      <Filter>Resources\assets\Traps\Rock Head</Filter>
+    </ClInclude>
+    <ClInclude Include="Z:\cocos2d-lemming\Resources\assets\Traps\Rock Head\Idle.png">
+      <Filter>Resources\assets\Traps\Rock Head</Filter>
+    </ClInclude>
+    <ClInclude Include="Z:\cocos2d-lemming\Resources\assets\Traps\Rock Head\Left Hit (42x42).png">
+      <Filter>Resources\assets\Traps\Rock Head</Filter>
+    </ClInclude>
+    <ClInclude Include="Z:\cocos2d-lemming\Resources\assets\Traps\Rock Head\Right Hit (42x42).png">
+      <Filter>Resources\assets\Traps\Rock Head</Filter>
+    </ClInclude>
+    <ClInclude Include="Z:\cocos2d-lemming\Resources\assets\Traps\Rock Head\Top Hit (42x42).png">
+      <Filter>Resources\assets\Traps\Rock Head</Filter>
+    </ClInclude>
+    <ClInclude Include="Z:\cocos2d-lemming\Resources\assets\Traps\Sand Mud Ice\Ice Particle.png">
+      <Filter>Resources\assets\Traps\Sand Mud Ice</Filter>
+    </ClInclude>
+    <ClInclude Include="Z:\cocos2d-lemming\Resources\assets\Traps\Sand Mud Ice\Mud Particle.png">
+      <Filter>Resources\assets\Traps\Sand Mud Ice</Filter>
+    </ClInclude>
+    <ClInclude Include="Z:\cocos2d-lemming\Resources\assets\Traps\Sand Mud Ice\Sand Mud Ice (16x6).png">
+      <Filter>Resources\assets\Traps\Sand Mud Ice</Filter>
+    </ClInclude>
+    <ClInclude Include="Z:\cocos2d-lemming\Resources\assets\Traps\Sand Mud Ice\Sand Particle.png">
+      <Filter>Resources\assets\Traps\Sand Mud Ice</Filter>
+    </ClInclude>
+    <ClInclude Include="Z:\cocos2d-lemming\Resources\assets\Traps\Saw\Chain.png">
+      <Filter>Resources\assets\Traps\Saw</Filter>
+    </ClInclude>
+    <ClInclude Include="Z:\cocos2d-lemming\Resources\assets\Traps\Saw\Off.png">
+      <Filter>Resources\assets\Traps\Saw</Filter>
+    </ClInclude>
+    <ClInclude Include="Z:\cocos2d-lemming\Resources\assets\Traps\Saw\On (38x38).png">
+      <Filter>Resources\assets\Traps\Saw</Filter>
+    </ClInclude>
+    <ClInclude Include="Z:\cocos2d-lemming\Resources\assets\Traps\Spike Head\Blink (54x52).png">
+      <Filter>Resources\assets\Traps\Spike Head</Filter>
+    </ClInclude>
+    <ClInclude Include="Z:\cocos2d-lemming\Resources\assets\Traps\Spike Head\Bottom Hit (54x52).png">
+      <Filter>Resources\assets\Traps\Spike Head</Filter>
+    </ClInclude>
+    <ClInclude Include="Z:\cocos2d-lemming\Resources\assets\Traps\Spike Head\Idle.png">
+      <Filter>Resources\assets\Traps\Spike Head</Filter>
+    </ClInclude>
+    <ClInclude Include="Z:\cocos2d-lemming\Resources\assets\Traps\Spike Head\Left Hit (54x52).png">
+      <Filter>Resources\assets\Traps\Spike Head</Filter>
+    </ClInclude>
+    <ClInclude Include="Z:\cocos2d-lemming\Resources\assets\Traps\Spike Head\Right Hit (54x52).png">
+      <Filter>Resources\assets\Traps\Spike Head</Filter>
+    </ClInclude>
+    <ClInclude Include="Z:\cocos2d-lemming\Resources\assets\Traps\Spike Head\Top Hit (54x52).png">
+      <Filter>Resources\assets\Traps\Spike Head</Filter>
+    </ClInclude>
+    <ClInclude Include="Z:\cocos2d-lemming\Resources\assets\Traps\Spiked Ball\Chain.png">
+      <Filter>Resources\assets\Traps\Spiked Ball</Filter>
+    </ClInclude>
+    <ClInclude Include="Z:\cocos2d-lemming\Resources\assets\Traps\Spiked Ball\Spiked Ball.png">
+      <Filter>Resources\assets\Traps\Spiked Ball</Filter>
+    </ClInclude>
+    <ClInclude Include="Z:\cocos2d-lemming\Resources\assets\Traps\Spikes\Idle.png">
+      <Filter>Resources\assets\Traps\Spikes</Filter>
+    </ClInclude>
+    <ClInclude Include="Z:\cocos2d-lemming\Resources\assets\Traps\Trampoline\Idle.png">
+      <Filter>Resources\assets\Traps\Trampoline</Filter>
+    </ClInclude>
+    <ClInclude Include="Z:\cocos2d-lemming\Resources\assets\Traps\Trampoline\Jump (28x28).png">
+      <Filter>Resources\assets\Traps\Trampoline</Filter>
+    </ClInclude>
     <ClInclude Include="Z:\cocos2d-lemming\Resources\fonts\Marker Felt.ttf">
       <Filter>Resources\fonts</Filter>
     </ClInclude>
     <ClInclude Include="Z:\cocos2d-lemming\Resources\fonts\arial.ttf">
       <Filter>Resources\fonts</Filter>
     </ClInclude>
+    <ClInclude Include="Z:\cocos2d-lemming\Resources\lemmings.png">
+      <Filter>Resources</Filter>
+    </ClInclude>
     <ClInclude Include="Z:\cocos2d-lemming\Resources\res\.gitkeep">
       <Filter>Resources\res</Filter>
+    </ClInclude>
+    <ClInclude Include="Z:\cocos2d-lemming\Resources\tiled\End (Idle).tsx">
+      <Filter>Resources\tiled</Filter>
+    </ClInclude>
+    <ClInclude Include="Z:\cocos2d-lemming\Resources\tiled\Gray.tsx">
+      <Filter>Resources\tiled</Filter>
+    </ClInclude>
+    <ClInclude Include="Z:\cocos2d-lemming\Resources\tiled\Level1.mini.tmx">
+      <Filter>Resources\tiled</Filter>
+    </ClInclude>
+    <ClInclude Include="Z:\cocos2d-lemming\Resources\tiled\Level1.tmx">
+      <Filter>Resources\tiled</Filter>
+    </ClInclude>
+    <ClInclude Include="Z:\cocos2d-lemming\Resources\tiled\Start (Idle).tsx">
+      <Filter>Resources\tiled</Filter>
+    </ClInclude>
+    <ClInclude Include="Z:\cocos2d-lemming\Resources\tiled\Terrain (16x16).tsx">
+      <Filter>Resources\tiled</Filter>
+    </ClInclude>
+    <ClInclude Include="Z:\cocos2d-lemming\Resources\tiled\tiledProj.tiled-project">
+      <Filter>Resources\tiled</Filter>
+    </ClInclude>
+    <ClInclude Include="Z:\cocos2d-lemming\Resources\tiled\tiledProj.tiled-session">
+      <Filter>Resources\tiled</Filter>
+    </ClInclude>
+    <ClInclude Include="Z:\cocos2d-lemming\Classes\LemmingGame.h">
+      <Filter>Source Files\Classes</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -61,11 +613,125 @@
     <Filter Include="Resources">
       <UniqueIdentifier>{4AE48440-9F59-3849-B35A-047CF62FCB3B}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Resources\assets">
+      <UniqueIdentifier>{4301CFE9-BB62-30BE-8172-BFE0E9B3B2F3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resources\assets\Background">
+      <UniqueIdentifier>{F356395C-CB6E-312D-8848-EA715A144542}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resources\assets\Items">
+      <UniqueIdentifier>{24BD21E4-CE95-3522-9768-DA096F0E46E7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resources\assets\Items\Boxes">
+      <UniqueIdentifier>{B52D3AB3-9BE5-367D-B261-78078B46D341}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resources\assets\Items\Boxes\Box1">
+      <UniqueIdentifier>{C1EA0F06-2D17-33B9-9043-FDE461C0B9B8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resources\assets\Items\Boxes\Box2">
+      <UniqueIdentifier>{BD56C003-043F-3024-9F97-6042027FD2D1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resources\assets\Items\Boxes\Box3">
+      <UniqueIdentifier>{14FAB41A-2AAD-3F0F-B86A-3D828CA272D1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resources\assets\Items\Checkpoints">
+      <UniqueIdentifier>{B9A33764-2EFB-3EF1-995D-F4013FCAA342}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resources\assets\Items\Checkpoints\Checkpoint">
+      <UniqueIdentifier>{1465A9D6-722D-3046-B87F-85BE90BB394D}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resources\assets\Items\Checkpoints\End">
+      <UniqueIdentifier>{E71D286E-4539-314D-982F-89E442ADE03B}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resources\assets\Items\Checkpoints\Start">
+      <UniqueIdentifier>{4A9D8606-4432-3C74-83B3-884F8BBD3FEA}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resources\assets\Items\Fruits">
+      <UniqueIdentifier>{B6E653CB-6E9B-34AF-88B2-410411F955E3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resources\assets\Main Characters">
+      <UniqueIdentifier>{B27921E4-6BAB-324F-8B4D-F607DA836DD6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resources\assets\Main Characters\Mask Dude">
+      <UniqueIdentifier>{49D3DE4B-934D-3187-9E7A-FD6EAF207526}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resources\assets\Main Characters\Ninja Frog">
+      <UniqueIdentifier>{AF3743DD-8F0E-378C-95CE-2D36C657F8C0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resources\assets\Main Characters\Pink Man">
+      <UniqueIdentifier>{CCEDE2E3-1E50-3CEA-BFF7-A0B249944F2B}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resources\assets\Main Characters\Virtual Guy">
+      <UniqueIdentifier>{A5C2DF3C-0302-3439-A949-C679BE26E0E4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resources\assets\Menu">
+      <UniqueIdentifier>{881DB515-2FD7-3C53-8AB5-1B359D8F5414}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resources\assets\Menu\Buttons">
+      <UniqueIdentifier>{61E8F8CE-A71C-3775-B84A-2399E84DB645}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resources\assets\Menu\Levels">
+      <UniqueIdentifier>{51769C99-1BC2-36E8-849E-E5554B8AD42A}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resources\assets\Menu\Text">
+      <UniqueIdentifier>{4DEAFBB4-69BE-3C63-A19E-094FFF6F68F6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resources\assets\Other">
+      <UniqueIdentifier>{4EBD329D-00F0-3C36-BF3B-FECD67D69AF4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resources\assets\Terrain">
+      <UniqueIdentifier>{ED7E34F6-6686-303C-B442-323458D3E88F}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resources\assets\Traps">
+      <UniqueIdentifier>{8CFDEA36-EB41-3376-B713-E825D8E0AA85}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resources\assets\Traps\Arrow">
+      <UniqueIdentifier>{CD123A37-5C23-357F-8304-3FA2C7EA0707}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resources\assets\Traps\Blocks">
+      <UniqueIdentifier>{5AFBBB5C-FD7D-37BF-BD03-246D02FECE1D}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resources\assets\Traps\Falling Platforms">
+      <UniqueIdentifier>{8D0600D6-A847-3DC3-963D-10A33E8BE400}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resources\assets\Traps\Fan">
+      <UniqueIdentifier>{D1E0A61B-B93D-3E5F-9C48-366C333D3236}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resources\assets\Traps\Fire">
+      <UniqueIdentifier>{45B8B3E1-51E1-3517-8854-748465661130}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resources\assets\Traps\Platforms">
+      <UniqueIdentifier>{F40ADF17-8ADD-3362-A8DA-F240001A03D8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resources\assets\Traps\Rock Head">
+      <UniqueIdentifier>{19544FC5-F92C-3755-8C2B-FC1CD643AF56}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resources\assets\Traps\Sand Mud Ice">
+      <UniqueIdentifier>{29685DD7-517B-387E-ACC6-76FCB94F6781}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resources\assets\Traps\Saw">
+      <UniqueIdentifier>{70A06F9F-3397-35C7-97BF-DDC2EA759237}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resources\assets\Traps\Spike Head">
+      <UniqueIdentifier>{59BAE7D1-3CB1-3A35-B63C-8FA7BA482658}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resources\assets\Traps\Spiked Ball">
+      <UniqueIdentifier>{981DB4B3-454D-38D1-BE97-BF13A523111A}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resources\assets\Traps\Spikes">
+      <UniqueIdentifier>{BCDB4FAA-312A-38AF-AD24-528C9E70D317}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resources\assets\Traps\Trampoline">
+      <UniqueIdentifier>{7D932BA9-60DA-3422-982D-DED209110A18}</UniqueIdentifier>
+    </Filter>
     <Filter Include="Resources\fonts">
       <UniqueIdentifier>{CCC5FEA2-E354-3EC3-B053-BC74C21D1C7C}</UniqueIdentifier>
     </Filter>
     <Filter Include="Resources\res">
       <UniqueIdentifier>{9B6F3D91-861F-36BB-AA2E-98C09DA28268}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resources\tiled">
+      <UniqueIdentifier>{557E0C75-9737-3CA7-B221-E91CF53421FF}</UniqueIdentifier>
     </Filter>
     <Filter Include="Source Files">
       <UniqueIdentifier>{741CAB05-0C99-3CEB-80FF-7C3CCECA75F9}</UniqueIdentifier>
