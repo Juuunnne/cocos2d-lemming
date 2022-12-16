@@ -809,10 +809,12 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\Classes\Timer.h" />
     <ClInclude Include="Z:\cocos2d-lemming\Classes\AppDelegate.h" />
     <ClInclude Include="Z:\cocos2d-lemming\Classes\Lemming.h" />
     <ClInclude Include="Z:\cocos2d-lemming\proj.win32\main.h" />
     <ClInclude Include="Z:\cocos2d-lemming\proj.win32\resource.h" />
+    <ClCompile Include="..\Classes\Timer.cpp" />
     <ClCompile Include="Z:\cocos2d-lemming\Classes\AppDelegate.cpp" />
     <ClCompile Include="Z:\cocos2d-lemming\Classes\Lemming.cpp" />
     <ClCompile Include="Z:\cocos2d-lemming\proj.win32\main.cpp" />

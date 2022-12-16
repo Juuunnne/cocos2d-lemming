@@ -1,5 +1,6 @@
 #include "LemmingGame.h"
 #include "Lemming.h"
+#include "Timer.h"
 
 cocos2d::Scene* LemmingGame::createScene()
 {
@@ -25,6 +26,11 @@ bool LemmingGame::init()
 
     this->addChild(_tileMap);
     
+    time = 90.f;
+    this->schedule(CC_SCHEDULE_SELECTOR(Timer::update), 0.01);
+    
+	this->addChild(Timer::create(), 2);
+    
     cocos2d::TMXObjectGroup* objects = _tileMap->getObjectGroup("interractions");
     cocos2d::ValueMap spawnPoint = objects->getObject("start");
 	int x = spawnPoint["x"].asInt() * MAP_SCALE;
@@ -37,7 +43,7 @@ bool LemmingGame::init()
 void LemmingGame::SpawnLemming(int x, int y, bool direction)
 {
     auto physicsBody = cocos2d::PhysicsBody::createBox(cocos2d::Size(15, 15), cocos2d::PhysicsMaterial(0.1f, 1.0f, 0.0f));
-    physicsBody->setDynamic(true);
+    physicsBody->setDynamic(false);
     physicsBody->setRotationEnable(false);
 	Lemming* lemming = new Lemming(cocos2d::Vec2(x, y), direction);
     lemming->setScale(4);

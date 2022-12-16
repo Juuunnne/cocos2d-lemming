@@ -16,6 +16,9 @@
     <ClCompile Include="Z:\cocos2d-lemming\cocos2d\cocos\precheader.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="..\Classes\Timer.cpp">
+      <Filter>Source Files\Classes</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Z:\cocos2d-lemming\Classes\AppDelegate.h">
@@ -600,7 +603,7 @@
     <ClInclude Include="Z:\cocos2d-lemming\Classes\LemmingGame.h">
       <Filter>Source Files\Classes</Filter>
     </ClInclude>
-    <ClInclude Include="..\Classes\HelloWorld.h">
+    <ClInclude Include="..\Classes\Timer.h">
       <Filter>Source Files\Classes</Filter>
     </ClInclude>
   </ItemGroup>

@@ -23,6 +23,7 @@ private:
     cocos2d::TMXLayer* breakable;
     cocos2d::TMXLayer* unbreakable;
     std::vector<Lemming*> lemmings;
+    float time;
 };
 
 #endif
