@@ -44,8 +44,8 @@ void GameMenu::InitMenuElement(){
     menuElement.push_back(closeButton); menuElement.push_back(settingButton); menuElement.push_back(playButton);
 
     for (int i = 1; i < menuElement.size() + 1; ++i) {
-        menuElement[i-1]->setPosition(400 / 2  , 200 / 2);
-
+        menuElement[i-1]->setPosition(origin.x  , origin.y + i * 50 - 100);
+        menuElement[i-1]->setScale(2);
         menu->addChild(menuElement[i-1]);
     }
 
