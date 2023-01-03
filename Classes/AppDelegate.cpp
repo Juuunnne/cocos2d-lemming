@@ -23,23 +23,23 @@
  ****************************************************************************/
 
 #include "AppDelegate.h"
-#include "HelloWorld.h"
-#include "LemmingGame.h"
 #include "GameMenu.h"
+#include "Settings.h"
+#include "LemmingGame.h"
 
 // #define USE_AUDIO_ENGINE 1
 
 #if USE_AUDIO_ENGINE
 #include "audio/include/AudioEngine.h"
-using namespace cocos2d::experimental;
+using namespace experimental;
 #endif
 
 USING_NS_CC;
 
-static cocos2d::Size designResolutionSize = cocos2d::Size(800, 600);
-static cocos2d::Size smallResolutionSize = cocos2d::Size(480, 320);
-static cocos2d::Size mediumResolutionSize = cocos2d::Size(1024, 768);
-static cocos2d::Size largeResolutionSize = cocos2d::Size(2048, 1536);
+static Size designResolutionSize = Size(800, 600);
+static Size smallResolutionSize = Size(480, 320);
+static Size mediumResolutionSize = Size(1024, 768);
+static Size largeResolutionSize = Size(2048, 1536);
 
 AppDelegate::AppDelegate()
 {
@@ -75,7 +75,7 @@ bool AppDelegate::applicationDidFinishLaunching() {
     auto glview = director->getOpenGLView();
     if(!glview) {
 #if (CC_TARGET_PLATFORM == CC_PLATFORM_WIN32) || (CC_TARGET_PLATFORM == CC_PLATFORM_MAC) || (CC_TARGET_PLATFORM == CC_PLATFORM_LINUX)
-        glview = GLViewImpl::createWithRect("gtech-lemmings", cocos2d::Rect(0, 0, designResolutionSize.width, designResolutionSize.height));
+        glview = GLViewImpl::createWithRect("gtech-lemmings", Rect(0, 0, designResolutionSize.width, designResolutionSize.height));
 #else
         glview = GLViewImpl::create("gtech-lemmings");
 #endif
@@ -109,12 +109,9 @@ bool AppDelegate::applicationDidFinishLaunching() {
     }
     */
     register_all_packages();
-
-    // create a scene. it's an autorelease object
-    auto scene = GameMenu::createScene();
-
-    // run
-    director->runWithScene(scene);
+    
+    GameMenu* gm = new GameMenu();
+    director->runWithScene(gm->GetScene());
 
     return true;
 }

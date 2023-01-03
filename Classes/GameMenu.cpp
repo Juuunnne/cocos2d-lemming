@@ -3,63 +3,65 @@
 //
 
 #include "GameMenu.h"
-USING_NS_CC;
-using namespace ui;
 
-Scene* GameMenu::createScene() {
-
-    return GameMenu::create();
-}
-
-bool GameMenu::init() {
-    if (!Scene::init())
-    {
-        return false;
-    }
-    screenSize = Director::getInstance()->getVisibleSize();
-    origin = Director::getInstance()->getVisibleOrigin();
-    this->InitMenuElement();
-
-    this->addChild(menuBG,-2);
-    this->addChild(menu);
-    return true;
-}
-
-void GameMenu::InitMenuElement(){
-    menu = Menu::create();
-    auto  play    = Sprite::create("assets/Menu/Buttons/Play.png");
-    auto  play_pressed  = Sprite::create("assets/Menu/Buttons/Play_pressed.png");
-    auto  setting = Sprite::create("assets/Menu/Buttons/Settings.png");
-    auto setting_pressed = Sprite::create("assets/Menu/Buttons/Settings_pressed.png");
-    auto  close   = Sprite::create("assets/Menu/Buttons/Close.png");
-    auto close_pressed = Sprite::create("assets/Menu/Buttons/Close_pressed.png");
-
-     playButton    = MenuItemSprite::create(play,play_pressed, CC_CALLBACK_0(GameMenu::CallGameScene, this));
-     settingButton = MenuItemSprite::create(setting,setting_pressed, CC_CALLBACK_0(GameMenu::CallGameScene, this));
-     closeButton   = MenuItemSprite::create(close,close_pressed, CC_CALLBACK_1(GameMenu::Quit, this));
-    menuElement.push_back(closeButton); menuElement.push_back(settingButton); menuElement.push_back(playButton);
-
-    for (int i = 1; i < menuElement.size() + 1; ++i) {
-        menuElement[i-1]->setPosition(origin.x , origin.y + i * 70 - 200);
-        menuElement[i-1]->setScale(3);
-        menu->addChild(menuElement[i-1]);
-    }
-    menuBG = Sprite::create("menuBG.png");
-    menuBG->setPosition(origin.x + screenSize.width / 2, origin.y + screenSize.height / 2 );
-}
-
-void GameMenu::Quit(Ref* pSender)
+GameMenu::GameMenu()
 {
-    //Close the cocos2d-x game scene and quit the application
+	this->scene = Scene::create();
+	this->settings = new Settings(scene);
+	this->game = new LemmingGame();
+    this->InitMenuElements();
+}
+
+void GameMenu::InitMenuElements()
+{
+    menu = Menu::create();
+
+    // Load images
+    Sprite* play = Sprite::create("assets/Menu/Buttons/Play.png");
+    Sprite* play_pressed = Sprite::create("assets/Menu/Buttons/Play_pressed.png");
+    Sprite* setting = Sprite::create("assets/Menu/Buttons/Settings.png");
+    Sprite* setting_pressed = Sprite::create("assets/Menu/Buttons/Settings_pressed.png");
+    Sprite* close = Sprite::create("assets/Menu/Buttons/Close.png");
+    Sprite* close_pressed = Sprite::create("assets/Menu/Buttons/Close_pressed.png");
+    
+	// Close button
+    this->menuElements.push_back(MenuItemSprite::create(close, close_pressed, CC_CALLBACK_0(GameMenu::Quit, this)));
+	// Settings button
+    this->menuElements.push_back(MenuItemSprite::create(setting, setting_pressed, CC_CALLBACK_0(GameMenu::CallSettingsScene, this)));
+	// Play button
+    this->menuElements.push_back(MenuItemSprite::create(play, play_pressed, CC_CALLBACK_0(GameMenu::CallGameScene, this)));
+    
+    Size screenSize = Director::getInstance()->getVisibleSize();
+    Vec2 origin = Director::getInstance()->getVisibleOrigin();
+
+    // Set position and scale of menu items
+    for (int i = 0; i < this->menuElements.size(); ++i) {
+        this->menuElements[i]->setPosition(origin.x, origin.y + (i + 1) * 70 - 200);
+        this->menuElements[i]->setScale(3);
+        this->menu->addChild(this->menuElements[i]);
+    }
+    this->scene->addChild(menu);
+    
+	// Set background
+    this->menuBG = Sprite::create("menuBG.png");
+    this->menuBG->setPosition(origin.x + screenSize.width / 2, origin.y + screenSize.height / 2 );
+    this->scene->addChild(menuBG, -2);
+}
+
+Scene* GameMenu::GetScene()
+{
+	return this->scene;
+}
+
+void GameMenu::Quit()
+{
     Director::getInstance()->end();
-
-    /*To navigate back to native iOS screen(if present) without quitting the application  ,do not use Director::getInstance()->end() as given above,instead trigger a custom event created in RootViewController.mm as below*/
-
-    //EventCustom customEndEvent("game_scene_close_event");
-    //_eventDispatcher->dispatchEvent(&customEndEvent);
 }
 
 void GameMenu::CallGameScene() {
-    Director::getInstance()->replaceScene(HelloWorld::create());
+    Director::getInstance()->replaceScene(LemmingGame::create());
 }
 
+void GameMenu::CallSettingsScene() {
+    Director::getInstance()->replaceScene(this->settings->GetScene());
+}

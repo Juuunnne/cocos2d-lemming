@@ -7,14 +7,23 @@
     <ClCompile Include="Z:\cocos2d-lemming\Classes\Lemming.cpp">
       <Filter>Source Files\Classes</Filter>
     </ClCompile>
+    <ClCompile Include="Z:\cocos2d-lemming\Classes\PauseMenu.cpp">
+      <Filter>Source Files\Classes</Filter>
+    </ClCompile>
     <ClCompile Include="Z:\cocos2d-lemming\proj.win32\main.cpp">
       <Filter>Source Files\proj.win32</Filter>
     </ClCompile>
     <ClCompile Include="Z:\cocos2d-lemming\Classes\LemmingGame.cpp">
       <Filter>Source Files\Classes</Filter>
     </ClCompile>
+    <ClCompile Include="Z:\cocos2d-lemming\Classes\GameMenu.cpp">
+      <Filter>Source Files\Classes</Filter>
+    </ClCompile>
     <ClCompile Include="Z:\cocos2d-lemming\cocos2d\cocos\precheader.cpp">
       <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\Classes\Settings.cpp">
+      <Filter>Source Files\Classes</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -22,6 +31,9 @@
       <Filter>Source Files\Classes</Filter>
     </ClInclude>
     <ClInclude Include="Z:\cocos2d-lemming\Classes\Lemming.h">
+      <Filter>Source Files\Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="Z:\cocos2d-lemming\Classes\PauseMenu.h">
       <Filter>Source Files\Classes</Filter>
     </ClInclude>
     <ClInclude Include="Z:\cocos2d-lemming\proj.win32\main.h">
@@ -37,9 +49,6 @@
       <Filter>Resources</Filter>
     </ClInclude>
     <ClInclude Include="Z:\cocos2d-lemming\Resources\HelloWorld.png">
-      <Filter>Resources</Filter>
-    </ClInclude>
-    <ClInclude Include="Z:\cocos2d-lemming\Resources\TileMap.tmx">
       <Filter>Resources</Filter>
     </ClInclude>
     <ClInclude Include="Z:\cocos2d-lemming\Resources\assets\Background\Blue.png">
@@ -237,6 +246,9 @@
     <ClInclude Include="Z:\cocos2d-lemming\Resources\assets\Menu\Buttons\Close.png">
       <Filter>Resources\assets\Menu\Buttons</Filter>
     </ClInclude>
+    <ClInclude Include="Z:\cocos2d-lemming\Resources\assets\Menu\Buttons\Close_pressed.png">
+      <Filter>Resources\assets\Menu\Buttons</Filter>
+    </ClInclude>
     <ClInclude Include="Z:\cocos2d-lemming\Resources\assets\Menu\Buttons\Leaderboard.png">
       <Filter>Resources\assets\Menu\Buttons</Filter>
     </ClInclude>
@@ -249,6 +261,9 @@
     <ClInclude Include="Z:\cocos2d-lemming\Resources\assets\Menu\Buttons\Play.png">
       <Filter>Resources\assets\Menu\Buttons</Filter>
     </ClInclude>
+    <ClInclude Include="Z:\cocos2d-lemming\Resources\assets\Menu\Buttons\Play_pressed.png">
+      <Filter>Resources\assets\Menu\Buttons</Filter>
+    </ClInclude>
     <ClInclude Include="Z:\cocos2d-lemming\Resources\assets\Menu\Buttons\Previous.png">
       <Filter>Resources\assets\Menu\Buttons</Filter>
     </ClInclude>
@@ -256,6 +271,9 @@
       <Filter>Resources\assets\Menu\Buttons</Filter>
     </ClInclude>
     <ClInclude Include="Z:\cocos2d-lemming\Resources\assets\Menu\Buttons\Settings.png">
+      <Filter>Resources\assets\Menu\Buttons</Filter>
+    </ClInclude>
+    <ClInclude Include="Z:\cocos2d-lemming\Resources\assets\Menu\Buttons\Settings_pressed.png">
       <Filter>Resources\assets\Menu\Buttons</Filter>
     </ClInclude>
     <ClInclude Include="Z:\cocos2d-lemming\Resources\assets\Menu\Buttons\Volume.png">
@@ -570,6 +588,9 @@
     <ClInclude Include="Z:\cocos2d-lemming\Resources\lemmings.png">
       <Filter>Resources</Filter>
     </ClInclude>
+    <ClInclude Include="Z:\cocos2d-lemming\Resources\menuBG.png">
+      <Filter>Resources</Filter>
+    </ClInclude>
     <ClInclude Include="Z:\cocos2d-lemming\Resources\res\.gitkeep">
       <Filter>Resources\res</Filter>
     </ClInclude>
@@ -598,6 +619,12 @@
       <Filter>Resources\tiled</Filter>
     </ClInclude>
     <ClInclude Include="Z:\cocos2d-lemming\Classes\LemmingGame.h">
+      <Filter>Source Files\Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="Z:\cocos2d-lemming\Classes\GameMenu.h">
+      <Filter>Source Files\Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="..\Classes\Settings.h">
       <Filter>Source Files\Classes</Filter>
     </ClInclude>
   </ItemGroup>

@@ -5,36 +5,38 @@
 #ifndef GTECH_LEMMINGS_GAMEMENU_H
 #define GTECH_LEMMINGS_GAMEMENU_H
 #include "cocos2d.h"
+#include "settings.h"
+#include "LemmingGame.h"
 #include "ui/CocosGUI.h"
 #include <iostream>
-#include "HelloWorld.h"
+USING_NS_CC;
 
-class GameMenu : public cocos2d::Scene{
+class GameMenu
+{
 public:
-    static cocos2d::Scene* createScene();
-    virtual bool init();
-    //Init menu elements
-    void InitMenuElement();
-    //Scene management
-    void Quit(cocos2d::Ref* pSender);
+	GameMenu();
+    void InitMenuElements();
+    
+    // Scene management
+	Scene* GetScene();
+    void Quit();
     void CallGameScene();
-
-    CREATE_FUNC(GameMenu);
+	void CallSettingsScene();
+    
 private:
     //Menu
-    cocos2d::Menu *menu;
+    Menu *menu;
     //Menu Items's sprite
-    cocos2d::MenuItemSprite* playButton;
-    cocos2d::MenuItemSprite* settingButton;
-    cocos2d::MenuItemSprite* closeButton;
-    std::vector<cocos2d::MenuItem*> menuElement;
+    std::vector<MenuItem*> menuElements;
     //Menu's background
-    cocos2d::Sprite* menuBG;
-    //Vector for positioning
-    cocos2d::Size screenSize;
-    cocos2d::Vec2 origin;
+    Sprite* menuBG;
     //Mouse event listener
-    cocos2d::EventListenerMouse* mouseListener;
+    EventListenerMouse* mouseListener;
+
+	Scene* scene;
+	// Other scenes
+	Settings* settings;
+	LemmingGame* game;
 };
 
 
