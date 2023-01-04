@@ -47,8 +47,7 @@ void PauseMenu::CallBackResumeButton()
 
 void PauseMenu::CallBackToMenuButton()
 {
-    GameMenu menu;
-    Director::getInstance()->replaceScene(menu.GetScene());
+	Director::getInstance()->replaceScene(GameMenu::create());
 }
 
 

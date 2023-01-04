@@ -85,7 +85,7 @@ void LemmingGame::onLemmingCollision(PhysicsContact& contact)
 
 void LemmingGame::SpawnLemming(int x, int y, bool direction)
 {
-    auto physicsBody = PhysicsBody::createBox(Size(15, 15), PhysicsMaterial(0.1f, 1.0f, 0.0f));
+    auto physicsBody = PhysicsBody::createBox(Size(15, 15), PhysicsMaterial(1.0f, 0.4f, 0.0f));
     physicsBody->setDynamic(true);
     physicsBody->setRotationEnable(false);
 	Lemming* lemming = new Lemming(Vec2(x, y), direction);

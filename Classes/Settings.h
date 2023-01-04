@@ -1,18 +1,24 @@
 #pragma once
 
 #include "cocos2d.h"
+#include "GameMenu.h"
 USING_NS_CC;
 
-class Settings
+class Settings : public Scene
 {
 public:
-    Settings(Scene* callBackScene);
+	// Init
+	CREATE_FUNC(Settings);
+	bool init();
+	void initMenu();
+
+	void returnToMenu();
 	
-	void CallBackScene();
-	Scene* GetScene();
+	// Settings
+	void changeWindowSize();
 
 private:
-	Scene* scene;
-	Scene* callBackScene;
+	Size newWindowSize = Size(0, 0);
+	Label* windowSizeLabel;
 };
 
