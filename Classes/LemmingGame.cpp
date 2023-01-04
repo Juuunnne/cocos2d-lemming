@@ -14,8 +14,14 @@ bool LemmingGame::init()
     {
         return false;
     }
-    auto pml = PauseMenu::create();
-    this->addChild(pml);
+    //Input Manager
+    InputHandler();
+    this->setLocalZOrder(5);
+    //Create PauseMenu Layer
+    pml = PauseMenu::create();
+    this->addChild(pml,-1);
+
+
     this->getPhysicsWorld()->setDebugDrawMask(PhysicsWorld::DEBUGDRAW_SHAPE);
     visibleSize = Director::getInstance()->getVisibleSize();
     origin = Director::getInstance()->getVisibleOrigin();
@@ -49,6 +55,9 @@ bool LemmingGame::init()
 	int x = spawnPoint["x"].asInt() * MAP_SCALE;
 	int y = spawnPoint["y"].asInt() * MAP_SCALE;
 	SpawnLemming(x, y, false);
+
+    //Function which calls automatically update function
+    this->scheduleUpdate();
 
 	return true;
 }
@@ -84,4 +93,33 @@ void LemmingGame::SpawnLemming(int x, int y, bool direction)
     lemming->addComponent(physicsBody);
 	this->addChild(lemming);
 	lemmings.push_back(lemming);
+}
+
+void LemmingGame::InputHandler()
+{
+    auto keyboardListener = EventListenerKeyboard::create();
+    Director::getInstance()->getOpenGLView()->setIMEKeyboardState(true);
+
+    keyboardListener->onKeyPressed = [=](EventKeyboard::KeyCode keyCode, Event* event){
+        keys.push_back(keyCode);
+    };
+    keyboardListener->onKeyReleased = [=](EventKeyboard::KeyCode keyCode, Event* event){
+        // remove the key.
+        keys.erase(std::remove(keys.begin(), keys.end(),keyCode), keys.end());
+    };
+    this->_eventDispatcher->addEventListenerWithSceneGraphPriority(keyboardListener,this);
+}
+
+bool LemmingGame::isKeyPressed(EventKeyboard::KeyCode code) {
+    // Check if the key is pressed
+    if(std::find(keys.begin(), keys.end(), code) != keys.end())
+        return true;
+    return false;
+}
+
+void LemmingGame::update(float delta)
+{
+    if (isKeyPressed(EventKeyboard::KeyCode::KEY_ESCAPE))
+        Director::getInstance()->pause();
+        pml->setLocalZOrder(10);
 }

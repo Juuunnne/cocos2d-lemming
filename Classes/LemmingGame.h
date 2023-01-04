@@ -3,6 +3,7 @@
 
 #include "cocos2d.h"
 #include "Lemming.h"
+#include "PauseMenu.h"
 #define MAP_SCALE 2
 USING_NS_CC;
 
@@ -16,9 +17,13 @@ public:
 	void SpawnLemming(int x, int y, bool direction);
 
 	void onLemmingCollision(PhysicsContact& contact);
-    
-    CREATE_FUNC(LemmingGame);
 
+    void InputHandler();
+    bool isKeyPressed(EventKeyboard::KeyCode code);
+
+    void update(float delta);
+
+    CREATE_FUNC(LemmingGame);
 private:
     Size visibleSize;
     Vec2 origin;
@@ -27,8 +32,10 @@ private:
     TMXLayer* unbreakable;
     std::vector<Lemming*> lemmings;
     float time;
-
-
+    //Vector saving keyboard input
+    std::vector<cocos2d::EventKeyboard::KeyCode> keys;
+    //PauseMenu
+    PauseMenu* pml;
 };
 
 #endif

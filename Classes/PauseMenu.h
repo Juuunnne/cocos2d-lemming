@@ -10,7 +10,7 @@
 class PauseMenu : public cocos2d::Layer{
 public:
     CREATE_FUNC(PauseMenu);
-    bool init() override;
+    bool init();
 
     void InitPauseMenuElement();
     void CallBackResumeButton();

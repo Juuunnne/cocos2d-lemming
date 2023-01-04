@@ -9,11 +9,12 @@ USING_NS_CC;
 bool PauseMenu::init()
 {
     if (!Layer::init()) return false;
-    auto layer = Layer::create();
+
+
     InitPauseMenuElement();
 
-
-    layer->addChild(pauseMenu);
+    this->addChild(pauseMenu);
+    return true;
 }
 
 
@@ -27,9 +28,11 @@ void PauseMenu::InitPauseMenuElement()
     this->pausemenuElements.push_back(MenuItemSprite::create(resumeSprite,resumeSprite, CC_CALLBACK_0(PauseMenu::CallBackResumeButton,this)));
     this->pausemenuElements.push_back(MenuItemSprite::create(backToMenuSprite,backToMenuSprite, CC_CALLBACK_0(PauseMenu::CallBackToMenuButton,
                                                                                                                this)));
+    Size screenSize = Director::getInstance()->getVisibleSize();
+    Vec2 origin = Director::getInstance()->getVisibleOrigin();
 
-    for (int i = 0; i < pausemenuElements.size(); ++i) {
-        this->pausemenuElements[i]->setPosition(Vec2(50,100 +  i*10));
+    for (int i = 0; i < this->pausemenuElements.size(); ++i) {
+        this->pausemenuElements[i]->setPosition(origin.x, origin.y + (i + 1) * 70 - 200);
         this->pausemenuElements[i]->setScale(2);
         this->pauseMenu->addChild(pausemenuElements[i]);
     }
