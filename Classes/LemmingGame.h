@@ -4,11 +4,12 @@
 #include "cocos2d.h"
 #include "Lemming.h"
 #define MAP_SCALE 2
+USING_NS_CC;
 
-class LemmingGame : public cocos2d::Scene
+class LemmingGame : public Scene
 {
 public:
-    static cocos2d::Scene* createScene();
+    static Scene* createScene();
 
     virtual bool init();
 
@@ -17,11 +18,11 @@ public:
     CREATE_FUNC(LemmingGame);
 
 private:
-    cocos2d::Size visibleSize;
-    cocos2d::Vec2 origin;
-    cocos2d::TMXTiledMap* _tileMap;
-    cocos2d::TMXLayer* breakable;
-    cocos2d::TMXLayer* unbreakable;
+    Size visibleSize;
+    Vec2 origin;
+    TMXTiledMap* _tileMap;
+    TMXLayer* breakable;
+    TMXLayer* unbreakable;
     std::vector<Lemming*> lemmings;
     float time;
 };

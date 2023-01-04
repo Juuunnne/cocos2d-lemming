@@ -1,10 +1,11 @@
 #pragma once
 #include "cocos2d.h"
+USING_NS_CC;
 
-class Lemming : public cocos2d::Sprite
+class Lemming : public Sprite
 {
 public:
-	Lemming(cocos2d::Vec2 position, bool direction);
+	Lemming(Vec2 position, bool direction);
 	~Lemming ();
 	
 	void Update();
@@ -12,5 +13,5 @@ public:
 
 private:
 	bool direction; // false for right, true for left
-	cocos2d::MoveBy* moveAction;
+	MoveBy* moveAction;
 };
