@@ -15,6 +15,8 @@ public:
 
 	void SpawnLemming(int x, int y, bool direction);
 
+	void onLemmingCollision(PhysicsContact& contact);
+    
     CREATE_FUNC(LemmingGame);
 
 private:
