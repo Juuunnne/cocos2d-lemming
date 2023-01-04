@@ -4,6 +4,9 @@
     <ClCompile Include="Z:\cocos2d-lemming\Classes\AppDelegate.cpp">
       <Filter>Source Files\Classes</Filter>
     </ClCompile>
+    <ClCompile Include="Z:\cocos2d-lemming\Classes\HelloWorld.cpp">
+      <Filter>Source Files\Classes</Filter>
+    </ClCompile>
     <ClCompile Include="Z:\cocos2d-lemming\Classes\Lemming.cpp">
       <Filter>Source Files\Classes</Filter>
     </ClCompile>
@@ -28,6 +31,9 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Z:\cocos2d-lemming\Classes\AppDelegate.h">
+      <Filter>Source Files\Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="Z:\cocos2d-lemming\Classes\HelloWorld.h">
       <Filter>Source Files\Classes</Filter>
     </ClInclude>
     <ClInclude Include="Z:\cocos2d-lemming\Classes\Lemming.h">
@@ -617,6 +623,9 @@
     </ClInclude>
     <ClInclude Include="Z:\cocos2d-lemming\Resources\tiled\tiledProj.tiled-session">
       <Filter>Resources\tiled</Filter>
+    </ClInclude>
+    <ClInclude Include="Z:\cocos2d-lemming\Resources\time.png">
+      <Filter>Resources</Filter>
     </ClInclude>
     <ClInclude Include="Z:\cocos2d-lemming\Classes\LemmingGame.h">
       <Filter>Source Files\Classes</Filter>

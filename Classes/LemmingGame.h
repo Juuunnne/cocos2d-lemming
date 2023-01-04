@@ -15,6 +15,8 @@ public:
 
 	void SpawnLemming(int x, int y, bool direction);
 
+	void onLemmingCollision(PhysicsContact& contact);
+    
     CREATE_FUNC(LemmingGame);
 
 private:
@@ -24,6 +26,7 @@ private:
     TMXLayer* breakable;
     TMXLayer* unbreakable;
     std::vector<Lemming*> lemmings;
+    float time;
 };
 
 #endif
