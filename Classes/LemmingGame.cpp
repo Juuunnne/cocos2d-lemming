@@ -23,13 +23,8 @@ bool LemmingGame::init()
 
     breakable = _tileMap->getLayer("breakable");
     unbreakable = _tileMap->getLayer("unbreakable");
-
+    
     this->addChild(_tileMap);
-    
-    time = 90.f;
-    this->schedule(CC_SCHEDULE_SELECTOR(Timer::update), 0.01);
-    
-	this->addChild(Timer::create(), 2);
     
     cocos2d::TMXObjectGroup* objects = _tileMap->getObjectGroup("interractions");
     cocos2d::ValueMap spawnPoint = objects->getObject("start");
