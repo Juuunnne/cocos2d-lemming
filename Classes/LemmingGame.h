@@ -27,6 +27,8 @@ private:
     TMXLayer* unbreakable;
     std::vector<Lemming*> lemmings;
     float time;
+
+
 };
 
 #endif

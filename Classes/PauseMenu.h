@@ -5,12 +5,21 @@
 #ifndef GTECH_LEMMINGS_PAUSEMENU_H
 #define GTECH_LEMMINGS_PAUSEMENU_H
 
+#include "cocos2d.h"
 
-class PauseMenu {
+class PauseMenu : public cocos2d::Layer{
 public:
+    CREATE_FUNC(PauseMenu);
+    bool init() override;
+
+    void InitPauseMenuElement();
+    void CallBackResumeButton();
+    void CallBackToMenuButton();
+
 
 private:
-
+    cocos2d::Menu * pauseMenu;
+    std::vector<cocos2d::MenuItemSprite*> pausemenuElements;
 };
 
 

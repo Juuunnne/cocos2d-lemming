@@ -1,6 +1,7 @@
 #include "LemmingGame.h"
 #include "Lemming.h"
 #include "Timer.h"
+#include "PauseMenu.h"
 
 Scene* LemmingGame::createScene()
 {
@@ -13,6 +14,8 @@ bool LemmingGame::init()
     {
         return false;
     }
+    auto pml = PauseMenu::create();
+    this->addChild(pml);
     this->getPhysicsWorld()->setDebugDrawMask(PhysicsWorld::DEBUGDRAW_SHAPE);
     visibleSize = Director::getInstance()->getVisibleSize();
     origin = Director::getInstance()->getVisibleOrigin();

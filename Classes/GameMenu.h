@@ -5,7 +5,7 @@
 #ifndef GTECH_LEMMINGS_GAMEMENU_H
 #define GTECH_LEMMINGS_GAMEMENU_H
 #include "cocos2d.h"
-#include "settings.h"
+#include "Settings.h"
 #include "LemmingGame.h"
 #include "ui/CocosGUI.h"
 #include <iostream>
