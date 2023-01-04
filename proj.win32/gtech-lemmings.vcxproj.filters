@@ -4,42 +4,45 @@
     <ClCompile Include="Z:\cocos2d-lemming\Classes\AppDelegate.cpp">
       <Filter>Source Files\Classes</Filter>
     </ClCompile>
-    <ClCompile Include="Z:\cocos2d-lemming\Classes\HelloWorld.cpp">
+    <ClCompile Include="Z:\cocos2d-lemming\Classes\Lemming.cpp">
       <Filter>Source Files\Classes</Filter>
     </ClCompile>
-    <ClCompile Include="Z:\cocos2d-lemming\Classes\Lemming.cpp">
+    <ClCompile Include="Z:\cocos2d-lemming\Classes\LemmingGame.cpp">
       <Filter>Source Files\Classes</Filter>
     </ClCompile>
     <ClCompile Include="Z:\cocos2d-lemming\Classes\PauseMenu.cpp">
       <Filter>Source Files\Classes</Filter>
     </ClCompile>
-    <ClCompile Include="Z:\cocos2d-lemming\proj.win32\main.cpp">
-      <Filter>Source Files\proj.win32</Filter>
-    </ClCompile>
-    <ClCompile Include="Z:\cocos2d-lemming\Classes\LemmingGame.cpp">
+    <ClCompile Include="Z:\cocos2d-lemming\Classes\Settings.cpp">
       <Filter>Source Files\Classes</Filter>
     </ClCompile>
     <ClCompile Include="Z:\cocos2d-lemming\Classes\GameMenu.cpp">
       <Filter>Source Files\Classes</Filter>
     </ClCompile>
+    <ClCompile Include="Z:\cocos2d-lemming\proj.win32\main.cpp">
+      <Filter>Source Files\proj.win32</Filter>
+    </ClCompile>
     <ClCompile Include="Z:\cocos2d-lemming\cocos2d\cocos\precheader.cpp">
       <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\Classes\Settings.cpp">
-      <Filter>Source Files\Classes</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Z:\cocos2d-lemming\Classes\AppDelegate.h">
       <Filter>Source Files\Classes</Filter>
     </ClInclude>
-    <ClInclude Include="Z:\cocos2d-lemming\Classes\HelloWorld.h">
+    <ClInclude Include="Z:\cocos2d-lemming\Classes\Settings.h">
       <Filter>Source Files\Classes</Filter>
     </ClInclude>
     <ClInclude Include="Z:\cocos2d-lemming\Classes\Lemming.h">
       <Filter>Source Files\Classes</Filter>
     </ClInclude>
+    <ClInclude Include="Z:\cocos2d-lemming\Classes\LemmingGame.h">
+      <Filter>Source Files\Classes</Filter>
+    </ClInclude>
     <ClInclude Include="Z:\cocos2d-lemming\Classes\PauseMenu.h">
+      <Filter>Source Files\Classes</Filter>
+    </ClInclude>
+    <ClInclude Include="Z:\cocos2d-lemming\Classes\GameMenu.h">
       <Filter>Source Files\Classes</Filter>
     </ClInclude>
     <ClInclude Include="Z:\cocos2d-lemming\proj.win32\main.h">
@@ -247,6 +250,12 @@
       <Filter>Resources\assets\Menu\Buttons</Filter>
     </ClInclude>
     <ClInclude Include="Z:\cocos2d-lemming\Resources\assets\Menu\Buttons\Back.png">
+      <Filter>Resources\assets\Menu\Buttons</Filter>
+    </ClInclude>
+    <ClInclude Include="Z:\cocos2d-lemming\Resources\assets\Menu\Buttons\Back_green.png">
+      <Filter>Resources\assets\Menu\Buttons</Filter>
+    </ClInclude>
+    <ClInclude Include="Z:\cocos2d-lemming\Resources\assets\Menu\Buttons\Back_green_pressed.png">
       <Filter>Resources\assets\Menu\Buttons</Filter>
     </ClInclude>
     <ClInclude Include="Z:\cocos2d-lemming\Resources\assets\Menu\Buttons\Close.png">
@@ -626,15 +635,6 @@
     </ClInclude>
     <ClInclude Include="Z:\cocos2d-lemming\Resources\time.png">
       <Filter>Resources</Filter>
-    </ClInclude>
-    <ClInclude Include="Z:\cocos2d-lemming\Classes\LemmingGame.h">
-      <Filter>Source Files\Classes</Filter>
-    </ClInclude>
-    <ClInclude Include="Z:\cocos2d-lemming\Classes\GameMenu.h">
-      <Filter>Source Files\Classes</Filter>
-    </ClInclude>
-    <ClInclude Include="..\Classes\Settings.h">
-      <Filter>Source Files\Classes</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

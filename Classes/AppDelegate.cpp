@@ -37,9 +37,6 @@ using namespace experimental;
 USING_NS_CC;
 
 static Size designResolutionSize = Size(800, 600);
-static Size smallResolutionSize = Size(480, 320);
-static Size mediumResolutionSize = Size(1024, 768);
-static Size largeResolutionSize = Size(2048, 1536);
 
 AppDelegate::AppDelegate()
 {
@@ -82,12 +79,6 @@ bool AppDelegate::applicationDidFinishLaunching() {
         director->setOpenGLView(glview);
     }
 
-    // turn on display FPS
-    director->setDisplayStats(true);
-
-    // set FPS. the default value is 1.0/60 if you don't call this
-    director->setAnimationInterval(1.0f / 60);
-
     // Set the design resolution
     glview->setDesignResolutionSize(designResolutionSize.width, designResolutionSize.height, ResolutionPolicy::SHOW_ALL);
     auto frameSize = glview->getFrameSize();
@@ -109,9 +100,12 @@ bool AppDelegate::applicationDidFinishLaunching() {
     }
     */
     register_all_packages();
-    
-    GameMenu* gm = new GameMenu();
-    director->runWithScene(gm->GetScene());
+
+    // create a scene. it's an autorelease object
+    auto scene = GameMenu::create();
+
+    // run
+    director->runWithScene(scene);
 
     return true;
 }

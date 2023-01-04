@@ -4,17 +4,17 @@
 
 #include "GameMenu.h"
 
-GameMenu::GameMenu()
+bool GameMenu::init()
 {
-	this->scene = Scene::create();
-	this->settings = new Settings(scene);
-	this->game = new LemmingGame();
-    this->InitMenuElements();
+    this->InitMenu();
+    
+    return true;
 }
 
-void GameMenu::InitMenuElements()
+void GameMenu::InitMenu()
 {
-    menu = Menu::create();
+    Menu* menu = Menu::create();
+	std::vector<MenuItem*> menuItems;
 
     // Load images
     Sprite* play = Sprite::create("assets/Menu/Buttons/Play.png");
@@ -25,32 +25,27 @@ void GameMenu::InitMenuElements()
     Sprite* close_pressed = Sprite::create("assets/Menu/Buttons/Close_pressed.png");
     
 	// Close button
-    this->menuElements.push_back(MenuItemSprite::create(close, close_pressed, CC_CALLBACK_0(GameMenu::Quit, this)));
+    menuItems.push_back(MenuItemSprite::create(close, close_pressed, CC_CALLBACK_0(GameMenu::Quit, this)));
 	// Settings button
-    this->menuElements.push_back(MenuItemSprite::create(setting, setting_pressed, CC_CALLBACK_0(GameMenu::CallSettingsScene, this)));
+    menuItems.push_back(MenuItemSprite::create(setting, setting_pressed, CC_CALLBACK_0(GameMenu::CallSettingsScene, this)));
 	// Play button
-    this->menuElements.push_back(MenuItemSprite::create(play, play_pressed, CC_CALLBACK_0(GameMenu::CallGameScene, this)));
+    menuItems.push_back(MenuItemSprite::create(play, play_pressed, CC_CALLBACK_0(GameMenu::CallGameScene, this)));
     
     Size screenSize = Director::getInstance()->getVisibleSize();
     Vec2 origin = Director::getInstance()->getVisibleOrigin();
 
     // Set position and scale of menu items
-    for (int i = 0; i < this->menuElements.size(); ++i) {
-        this->menuElements[i]->setPosition(origin.x, origin.y + (i + 1) * 70 - 200);
-        this->menuElements[i]->setScale(3);
-        this->menu->addChild(this->menuElements[i]);
+    for (int i = 0; i < menuItems.size(); ++i) {
+        menuItems[i]->setPosition(origin.x, origin.y + (i + 1) * 70 - 200);
+        menuItems[i]->setScale(3);
+        menu->addChild(menuItems[i]);
     }
-    this->scene->addChild(menu);
+    this->addChild(menu);
     
 	// Set background
-    this->menuBG = Sprite::create("menuBG.png");
-    this->menuBG->setPosition(origin.x + screenSize.width / 2, origin.y + screenSize.height / 2 );
-    this->scene->addChild(menuBG, -2);
-}
-
-Scene* GameMenu::GetScene()
-{
-	return this->scene;
+    Sprite* menuBG = Sprite::create("menuBG.png");
+    menuBG->setPosition(origin.x + screenSize.width / 2, origin.y + screenSize.height / 2 );
+    addChild(menuBG, -2);
 }
 
 void GameMenu::Quit()
@@ -63,5 +58,5 @@ void GameMenu::CallGameScene() {
 }
 
 void GameMenu::CallSettingsScene() {
-    Director::getInstance()->replaceScene(this->settings->GetScene());
+	Director::getInstance()->replaceScene(Settings::create());
 }

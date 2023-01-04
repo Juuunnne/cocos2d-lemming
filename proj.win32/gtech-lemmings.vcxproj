@@ -805,18 +805,20 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     </CustomBuild>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\Classes\Settings.h" />
     <ClInclude Include="Z:\cocos2d-lemming\Classes\AppDelegate.h" />
-    <ClInclude Include="Z:\cocos2d-lemming\Classes\HelloWorld.h" />
+    <ClInclude Include="Z:\cocos2d-lemming\Classes\Settings.h" />
     <ClInclude Include="Z:\cocos2d-lemming\Classes\Lemming.h" />
+    <ClInclude Include="Z:\cocos2d-lemming\Classes\LemmingGame.h" />
     <ClInclude Include="Z:\cocos2d-lemming\Classes\PauseMenu.h" />
+    <ClInclude Include="Z:\cocos2d-lemming\Classes\GameMenu.h" />
     <ClInclude Include="Z:\cocos2d-lemming\proj.win32\main.h" />
     <ClInclude Include="Z:\cocos2d-lemming\proj.win32\resource.h" />
-    <ClCompile Include="..\Classes\Settings.cpp" />
     <ClCompile Include="Z:\cocos2d-lemming\Classes\AppDelegate.cpp" />
-    <ClCompile Include="Z:\cocos2d-lemming\Classes\HelloWorld.cpp" />
     <ClCompile Include="Z:\cocos2d-lemming\Classes\Lemming.cpp" />
+    <ClCompile Include="Z:\cocos2d-lemming\Classes\LemmingGame.cpp" />
     <ClCompile Include="Z:\cocos2d-lemming\Classes\PauseMenu.cpp" />
+    <ClCompile Include="Z:\cocos2d-lemming\Classes\Settings.cpp" />
+    <ClCompile Include="Z:\cocos2d-lemming\Classes\GameMenu.cpp" />
     <ClCompile Include="Z:\cocos2d-lemming\proj.win32\main.cpp" />
     <ResourceCompile Include="Z:\cocos2d-lemming\proj.win32\game.rc" />
     <ClInclude Include="Z:\cocos2d-lemming\Resources\CloseNormal.png" />
@@ -886,6 +888,8 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     <ClInclude Include="Z:\cocos2d-lemming\Resources\assets\Main Characters\Virtual Guy\Wall Jump (32x32).png" />
     <ClInclude Include="Z:\cocos2d-lemming\Resources\assets\Menu\Buttons\Achievements.png" />
     <ClInclude Include="Z:\cocos2d-lemming\Resources\assets\Menu\Buttons\Back.png" />
+    <ClInclude Include="Z:\cocos2d-lemming\Resources\assets\Menu\Buttons\Back_green.png" />
+    <ClInclude Include="Z:\cocos2d-lemming\Resources\assets\Menu\Buttons\Back_green_pressed.png" />
     <ClInclude Include="Z:\cocos2d-lemming\Resources\assets\Menu\Buttons\Close.png" />
     <ClInclude Include="Z:\cocos2d-lemming\Resources\assets\Menu\Buttons\Close_pressed.png" />
     <ClInclude Include="Z:\cocos2d-lemming\Resources\assets\Menu\Buttons\Leaderboard.png" />
@@ -1012,10 +1016,6 @@ if %errorlevel% neq 0 goto :VCEnd</Command>
     <ClInclude Include="Z:\cocos2d-lemming\Resources\tiled\tiledProj.tiled-project" />
     <ClInclude Include="Z:\cocos2d-lemming\Resources\tiled\tiledProj.tiled-session" />
     <ClInclude Include="Z:\cocos2d-lemming\Resources\time.png" />
-    <ClCompile Include="Z:\cocos2d-lemming\Classes\LemmingGame.cpp" />
-    <ClInclude Include="Z:\cocos2d-lemming\Classes\LemmingGame.h" />
-    <ClCompile Include="Z:\cocos2d-lemming\Classes\GameMenu.cpp" />
-    <ClInclude Include="Z:\cocos2d-lemming\Classes\GameMenu.h" />
     <ClCompile Include="Z:\cocos2d-lemming\cocos2d\cocos\precheader.cpp" />
   </ItemGroup>
   <ItemGroup>

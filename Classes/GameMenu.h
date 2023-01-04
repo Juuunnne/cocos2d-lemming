@@ -11,32 +11,20 @@
 #include <iostream>
 USING_NS_CC;
 
-class GameMenu
+class GameMenu : public Scene
 {
 public:
-	GameMenu();
-    void InitMenuElements();
+    // Init
+	CREATE_FUNC(GameMenu);
+	bool init();
+    void InitMenu();
     
     // Scene management
-	Scene* GetScene();
     void Quit();
     void CallGameScene();
 	void CallSettingsScene();
     
 private:
-    //Menu
-    Menu *menu;
-    //Menu Items's sprite
-    std::vector<MenuItem*> menuElements;
-    //Menu's background
-    Sprite* menuBG;
-    //Mouse event listener
-    EventListenerMouse* mouseListener;
-
-	Scene* scene;
-	// Other scenes
-	Settings* settings;
-	LemmingGame* game;
 };
 
 
