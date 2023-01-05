@@ -25,12 +25,13 @@ void Settings::initMenu()
 	// Resolution button
 	Label* resolutionLabel = Label::createWithTTF("> Click here to change resolution <", "fonts/arial.ttf", 24);
 	MenuItemLabel* resolutionButton = MenuItemLabel::create(resolutionLabel, CC_CALLBACK_0(Settings::changeWindowSize, this));
-	resolutionButton->setPosition(origin.x + 200, origin.y);
+	resolutionButton->setPosition(origin.x, origin.y + 200);
 	menu->addChild(resolutionButton);
-	/*windowSizeLabel = Label::createWithTTF("(" + std::to_string(screenSize.width) + "x" + std::to_string(screenSize.height) + ")", "fonts/arial.ttf", 24);
-	windowSizeLabel->setPosition(origin.x + 174, origin.y);
-	menu->addChild(windowSizeLabel);*/
+	windowSizeLabel = Label::createWithTTF("(" + std::to_string(screenSize.width) + "x" + std::to_string(screenSize.height) + ")", "fonts/arial.ttf", 24);
+	windowSizeLabel->setPosition(origin.x, origin.y + 174);
+	this->addChild(windowSizeLabel);
 
+	// Add menu
 	this->addChild(menu);
 
 	// Set background

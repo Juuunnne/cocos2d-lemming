@@ -7,19 +7,25 @@
 
 #include "cocos2d.h"
 
-class PauseMenu : public cocos2d::Layer{
+class PauseMenu : public cocos2d::Scene
+{
 public:
     CREATE_FUNC(PauseMenu);
     bool init();
 
     void InitPauseMenuElement();
+    
     void CallBackResumeButton();
     void CallBackToMenuButton();
 
+	void RestartGame();
 
 private:
     cocos2d::Menu * pauseMenu;
-    std::vector<cocos2d::MenuItemSprite*> pausemenuElements;
+	cocos2d::LayerColor* bg;
+    cocos2d::Sprite* resumeSprite;
+    cocos2d::Sprite* restartSprite;
+    cocos2d::Sprite* backToMenuSprite;
 };
 
 

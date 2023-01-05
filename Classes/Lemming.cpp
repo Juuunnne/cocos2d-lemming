@@ -1,26 +1,34 @@
 #pragma once
 #include "Lemming.h"
+#include "LemmingGame.h"
 
-#define NORMAL_SPEED 10
+#define NORMAL_SPEED 100
 #define FAST_SPEED 30
 
-Lemming::Lemming(Vec2 position, bool direction)
+
+void Lemming::init2(Vec2 position, bool direction)
 {
-	this->initWithFile("lemmings.png");
-	this->setTextureRect(Rect(0, 0, 15, 15));
+	// Graphics
+	this->initWithPolygon(AutoPolygon::generatePolygon("lemmings.png", Rect(0, 0, 15, 15)));
+	this->setScale(MAP_SCALE);
+
+	// Physics
+	PhysicsBody* physicsBody = PhysicsBody::createBox(Size(4, 9), PhysicsMaterial(1.0f, 0.4f, 0.0f), Vec2(1, 2));
+	physicsBody->setDynamic(true);
+	physicsBody->setRotationEnable(false);
+	this->addComponent(physicsBody);
+	
+	// Other
 	this->setPosition(position);
 	this->direction = direction;
-	this->Update();
 }
 
-Lemming::~Lemming()
+void Lemming::update(float dt)
 {
-}
-
-void Lemming::Update()
-{
-	moveAction = MoveBy::create(1, Vec2((direction ? -1 : 1) * NORMAL_SPEED, 0));
-	this->runAction(this->moveAction);
+	
+	bool falling = abs(this->getPhysicsBody()->getVelocity().y) >= 0.2f;
+	int actualSpeed = direction ? NORMAL_SPEED : -NORMAL_SPEED;
+	this->getPhysicsBody()->setVelocity(Vec2(falling ? 0 : actualSpeed, this->getPhysicsBody()->getVelocity().y));
 }
 
 void Lemming::ChangeDir()
