@@ -16,10 +16,7 @@ bool LemmingGame::init()
     }
     //Input Manager
     InputHandler();
-    //Mouse Manager
-    MouseHandler();
-
-    this->getPhysicsWorld()->setDebugDrawMask(PhysicsWorld::DEBUGDRAW_SHAPE);
+    
     visibleSize = Director::getInstance()->getVisibleSize();
     origin = Director::getInstance()->getVisibleOrigin();
 
@@ -60,8 +57,7 @@ bool LemmingGame::init()
     ValueMap spawnPoint = objects->getObject("start");
     int x = spawnPoint["x"].asInt() * MAP_SCALE;
     int y = spawnPoint["y"].asInt() * MAP_SCALE;
-
-    ValueMap endPoint = objects->getObject("end");
+	spawnLemmingPoint = Vec2(x, y);
 
     //Function which calls automatically update function
     this->scheduleUpdate();
@@ -94,6 +90,7 @@ void LemmingGame::SpawnLemming(Vec2, bool direction)
 	//Lemming* lemming = Lemming::create(Vec2(x, y), direction);
     Lemming* lemming = Lemming::create();
     lemming->init2(spawnLemmingPoint, direction);
+	lemming->getPhysicsBody()->setVelocity(Vec2(0, -0.3f));
 	this->addChild(lemming);
 	lemmings.push_back(lemming);
 }
@@ -151,15 +148,14 @@ void LemmingGame::MouseHandler()
 
 void LemmingGame::explode(Vec2 mousPos, int radius)
 {
-/*    for (int i = x - radius; i < x + radius; ++i)
+    for (int i = mousPos.x - radius; i < mousPos.x + radius; ++i)
     {
-        for (int j = y - radius; j < y + radius; ++j)
+        for (int j = mousPos.y - radius; j < mousPos.y + radius; ++j)
         {
             if (i >= 0 && i < 30 && j >= 0 && j < 20)
             {
                 breakable->removeTileAt(Vec2(i, j));
             }
         }
-    }*/
-    breakable->removeTileAt(mousPos);
+    }
 }

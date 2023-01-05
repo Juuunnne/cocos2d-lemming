@@ -20,9 +20,6 @@ public:
 	void onLemmingCollision(PhysicsContact& contact);
 
     void explode(Vec2, int radius);
-
-    void GetLemmingPos();
-
     void InputHandler();
     void MouseHandler();
     bool isKeyPressed(EventKeyboard::KeyCode code);
