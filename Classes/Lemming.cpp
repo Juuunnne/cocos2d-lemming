@@ -21,6 +21,7 @@ void Lemming::init2(Vec2 position, bool direction)
 	// Other
 	this->setPosition(position);
 	this->direction = direction;
+
 }
 
 void Lemming::update(float dt)

@@ -128,7 +128,7 @@ endif()
 set(all_code_files
     ${GAME_HEADER}
     ${GAME_SOURCE}
-        Classes/Lemming.cpp Classes/Lemming.cpp Classes/LemmingGame.cpp Classes/LemmingGame.h Classes/LemmingGame.h Classes/LemmingGame.h Classes/GameMenu.cpp Classes/GameMenu.h Classes/PauseMenu.cpp Classes/PauseMenu.h)
+        Classes/Lemming.cpp Classes/Lemming.cpp Classes/LemmingGame.cpp Classes/LemmingGame.h Classes/LemmingGame.h Classes/LemmingGame.h Classes/GameMenu.cpp Classes/GameMenu.h Classes/PauseMenu.cpp Classes/PauseMenu.h Classes/Timer.cpp Classes/Timer.cpp Classes/Timer.cpp Classes/Timer.cpp Classes/Timer.cpp Classes/Timer.cpp)
 if(NOT ANDROID)
     add_executable(${APP_NAME} ${all_code_files})
 else()

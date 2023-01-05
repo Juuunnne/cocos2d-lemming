@@ -16,6 +16,8 @@ bool LemmingGame::init()
     }
     //Input Manager
     InputHandler();
+    //Mouse Manager
+    MouseHandler();
 
     this->getPhysicsWorld()->setDebugDrawMask(PhysicsWorld::DEBUGDRAW_SHAPE);
     visibleSize = Director::getInstance()->getVisibleSize();
@@ -53,12 +55,13 @@ bool LemmingGame::init()
             }
         }
     }
-	
+
     TMXObjectGroup* objects = _tileMap->getObjectGroup("interractions");
     ValueMap spawnPoint = objects->getObject("start");
-	int x = spawnPoint["x"].asInt() * MAP_SCALE;
-	int y = spawnPoint["y"].asInt() * MAP_SCALE;
-	SpawnLemming(x, y, true);
+    int x = spawnPoint["x"].asInt() * MAP_SCALE;
+    int y = spawnPoint["y"].asInt() * MAP_SCALE;
+
+    ValueMap endPoint = objects->getObject("end");
 
     //Function which calls automatically update function
     this->scheduleUpdate();
@@ -81,17 +84,16 @@ void LemmingGame::onLemmingCollision(PhysicsContact& contact)
 		Size tileSize = unbreakable->getMapTileSize();
         int x = tilePos.x / tileSize.width;
         int y = tilePos.y / tileSize.height;
-
         // Remove the tile
         unbreakable->removeTileAt(Vec2(x, y));
     }
 }
 
-void LemmingGame::SpawnLemming(int x, int y, bool direction)
+void LemmingGame::SpawnLemming(Vec2, bool direction)
 {
 	//Lemming* lemming = Lemming::create(Vec2(x, y), direction);
     Lemming* lemming = Lemming::create();
-    lemming->init2(Vec2(x, y), direction);
+    lemming->init2(spawnLemmingPoint, direction);
 	this->addChild(lemming);
 	lemmings.push_back(lemming);
 }
@@ -118,9 +120,46 @@ bool LemmingGame::isKeyPressed(EventKeyboard::KeyCode code) {
 
 void LemmingGame::update(float delta)
 {
+    time += delta;
     if (isKeyPressed(EventKeyboard::KeyCode::KEY_ESCAPE))
     {
 		keys.clear();
 		Director::getInstance()->pushScene(PauseMenu::create());
     }
+
+    if(lemmings.size() < maxNumber &&  time > 1.5f )
+    {
+        SpawnLemming(spawnLemmingPoint, true);
+        time = 0;
+    }
+    mousePos = Vec2(cursorX,cursorY);
+    explode(mousePos,16);
+
+}
+
+void LemmingGame::MouseHandler()
+{
+        _mouseListener = EventListenerMouse::create();
+        _mouseListener->onMouseDown = [this](cocos2d::Event *event) {
+        auto *mouseEvent = dynamic_cast<EventMouse *>(event);
+
+         this->cursorX = mouseEvent->getCursorX();
+         this->cursorY = mouseEvent->getCursorY();
+
+    };
+}
+
+void LemmingGame::explode(Vec2 mousPos, int radius)
+{
+/*    for (int i = x - radius; i < x + radius; ++i)
+    {
+        for (int j = y - radius; j < y + radius; ++j)
+        {
+            if (i >= 0 && i < 30 && j >= 0 && j < 20)
+            {
+                breakable->removeTileAt(Vec2(i, j));
+            }
+        }
+    }*/
+    breakable->removeTileAt(mousPos);
 }

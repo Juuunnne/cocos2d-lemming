@@ -15,11 +15,16 @@ public:
     CREATE_FUNC(LemmingGame);
     virtual bool init();
 
-	void SpawnLemming(int x, int y, bool direction);
+	void SpawnLemming(Vec2, bool direction);
 
 	void onLemmingCollision(PhysicsContact& contact);
 
+    void explode(Vec2, int radius);
+
+    void GetLemmingPos();
+
     void InputHandler();
+    void MouseHandler();
     bool isKeyPressed(EventKeyboard::KeyCode code);
 
     void update(float delta);
@@ -34,6 +39,16 @@ private:
     float time;
     //Vector saving keyboard input
     std::vector<cocos2d::EventKeyboard::KeyCode> keys;
+
+    //Mouse Event Listener
+    EventListenerMouse* _mouseListener;
+
+    float cursorX;
+    float cursorY;
+
+    int maxNumber = 40;
+    Vec2 spawnLemmingPoint;
+    Vec2 mousePos;
 };
 
 #endif
