@@ -22,6 +22,9 @@
     <ClCompile Include="Z:\cocos2d-lemming\proj.win32\main.cpp">
       <Filter>Source Files\proj.win32</Filter>
     </ClCompile>
+    <ClCompile Include="Z:\cocos2d-lemming\Classes\Timer.cpp">
+      <Filter>Source Files\Classes</Filter>
+    </ClCompile>
     <ClCompile Include="Z:\cocos2d-lemming\cocos2d\cocos\precheader.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>

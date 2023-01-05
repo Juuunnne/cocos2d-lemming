@@ -13,5 +13,9 @@ public:
 	void ChangeDir();
 
 private:
+	int currSpriteFrame;
+	int actualFrame;
+
 	bool direction; // false for left, true for right
+	float speed;
 };
