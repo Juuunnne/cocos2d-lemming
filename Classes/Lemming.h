@@ -5,13 +5,13 @@ USING_NS_CC;
 class Lemming : public Sprite
 {
 public:
-	Lemming(Vec2 position, bool direction);
-	~Lemming ();
+	CREATE_FUNC(Lemming);
+	bool init() { return true; };
+	void init2(Vec2 position, bool direction);
 	
-	void Update();
+	void update(float dt);
 	void ChangeDir();
 
 private:
-	bool direction; // false for right, true for left
-	MoveBy* moveAction;
+	bool direction; // false for left, true for right
 };

@@ -16,36 +16,40 @@ bool LemmingGame::init()
     }
     //Input Manager
     InputHandler();
-    this->setLocalZOrder(5);
-    //Create PauseMenu Layer
-    pml = PauseMenu::create();
-    this->addChild(pml,-1);
-
 
     this->getPhysicsWorld()->setDebugDrawMask(PhysicsWorld::DEBUGDRAW_SHAPE);
     visibleSize = Director::getInstance()->getVisibleSize();
     origin = Director::getInstance()->getVisibleOrigin();
 
+    // Load map
     _tileMap = TMXTiledMap::create("tiled/Level1.mini.tmx");
 	_tileMap->setScale(MAP_SCALE);
     Size mapSize = _tileMap->getMapSize();
+    this->addChild(_tileMap);
 
     breakable = _tileMap->getLayer("breakable");
     unbreakable = _tileMap->getLayer("unbreakable");
-    
-    this->addChild(_tileMap);
 
-    for (int i = 0; i < 30; ++i)
+    // Create collisions
+    PhysicsBody* collideBody;
+    for (int i = 0; i < mapSize.width; ++i)
     {
-        for (int j = 0; j < 20; ++j)
+        for (int j = 0; j < mapSize.height; ++j)
         {
-            auto tile = unbreakable->getTileAt(Vec2(i, j));
-            PhysicsBody* physicmap = PhysicsBody::createBox(Size(16, 16),
-                PhysicsMaterial(0.1f, 1.0f, 0.0f));
-            physicmap->setDynamic(false);
-            if (tile != nullptr)
+			Vec2 tileCoord = Vec2(i, j);
+			Sprite* tile_b = breakable->getTileAt(tileCoord);
+            Sprite* tile_u = unbreakable->getTileAt(tileCoord);
+            if (tile_b)
             {
-                tile->addComponent(physicmap);
+                collideBody = PhysicsBody::createBox(Size(16, 16), PhysicsMaterial(0.1f, 0.5f, 0.0f));
+                collideBody->setDynamic(false);
+                tile_b->addComponent(collideBody);
+            }
+            if (tile_u)
+            {
+                collideBody = PhysicsBody::createBox(Size(16, 16), PhysicsMaterial(0.1f, 0.5f, 0.0f));
+                collideBody->setDynamic(false);
+                tile_u->addComponent(collideBody);
             }
         }
     }
@@ -54,7 +58,7 @@ bool LemmingGame::init()
     ValueMap spawnPoint = objects->getObject("start");
 	int x = spawnPoint["x"].asInt() * MAP_SCALE;
 	int y = spawnPoint["y"].asInt() * MAP_SCALE;
-	SpawnLemming(x, y, false);
+	SpawnLemming(x, y, true);
 
     //Function which calls automatically update function
     this->scheduleUpdate();
@@ -85,12 +89,9 @@ void LemmingGame::onLemmingCollision(PhysicsContact& contact)
 
 void LemmingGame::SpawnLemming(int x, int y, bool direction)
 {
-    auto physicsBody = PhysicsBody::createBox(Size(15, 15), PhysicsMaterial(1.0f, 0.4f, 0.0f));
-    physicsBody->setDynamic(true);
-    physicsBody->setRotationEnable(false);
-	Lemming* lemming = new Lemming(Vec2(x, y), direction);
-    lemming->setScale(4);
-    lemming->addComponent(physicsBody);
+	//Lemming* lemming = Lemming::create(Vec2(x, y), direction);
+    Lemming* lemming = Lemming::create();
+    lemming->init2(Vec2(x, y), direction);
 	this->addChild(lemming);
 	lemmings.push_back(lemming);
 }
@@ -112,14 +113,14 @@ void LemmingGame::InputHandler()
 
 bool LemmingGame::isKeyPressed(EventKeyboard::KeyCode code) {
     // Check if the key is pressed
-    if(std::find(keys.begin(), keys.end(), code) != keys.end())
-        return true;
-    return false;
+    return std::find(keys.begin(), keys.end(), code) != keys.end();
 }
 
 void LemmingGame::update(float delta)
 {
     if (isKeyPressed(EventKeyboard::KeyCode::KEY_ESCAPE))
-        Director::getInstance()->pause();
-        pml->setLocalZOrder(10);
+    {
+		keys.clear();
+		Director::getInstance()->pushScene(PauseMenu::create());
+    }
 }

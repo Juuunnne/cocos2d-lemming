@@ -8,9 +8,6 @@ USING_NS_CC;
 
 bool PauseMenu::init()
 {
-    if (!Layer::init()) return false;
-
-
     InitPauseMenuElement();
 
     this->addChild(pauseMenu);
@@ -21,28 +18,35 @@ bool PauseMenu::init()
 void PauseMenu::InitPauseMenuElement()
 {
     pauseMenu = Menu::create();
-    //Create Menu and its elements
-    Sprite* resumeSprite = Sprite::create("assets/Menu/Buttons/Restart.png");
-    Sprite* backToMenuSprite = Sprite::create("assets/Menu/Buttons/Back.png");
-
-    this->pausemenuElements.push_back(MenuItemSprite::create(resumeSprite,resumeSprite, CC_CALLBACK_0(PauseMenu::CallBackResumeButton,this)));
-    this->pausemenuElements.push_back(MenuItemSprite::create(backToMenuSprite,backToMenuSprite, CC_CALLBACK_0(PauseMenu::CallBackToMenuButton,
-                                                                                                               this)));
     Size screenSize = Director::getInstance()->getVisibleSize();
     Vec2 origin = Director::getInstance()->getVisibleOrigin();
+    
+	// Create gray background
+    bg = LayerColor::create(Color4B(50, 50, 50, 200));
+    bg->setContentSize(Size(screenSize.width, screenSize.height));
+	this->addChild(bg, -1);
 
-    for (int i = 0; i < this->pausemenuElements.size(); ++i) {
-        this->pausemenuElements[i]->setPosition(origin.x, origin.y + (i + 1) * 70 - 200);
-        this->pausemenuElements[i]->setScale(2);
-        this->pauseMenu->addChild(pausemenuElements[i]);
+    // Create Menu and its elements
+	resumeSprite = Sprite::create("assets/Menu/Buttons/Play.png");
+    restartSprite = Sprite::create("assets/Menu/Buttons/Restart.png");
+    backToMenuSprite = Sprite::create("assets/Menu/Buttons/Back.png");
+
+    std::vector<MenuItemSprite*> pauseMenuItems;
+    pauseMenuItems.push_back(MenuItemSprite::create(resumeSprite, resumeSprite, CC_CALLBACK_0(PauseMenu::CallBackResumeButton,this)));
+	pauseMenuItems.push_back(MenuItemSprite::create(restartSprite, restartSprite, CC_CALLBACK_0(PauseMenu::RestartGame, this)));
+    pauseMenuItems.push_back(MenuItemSprite::create(backToMenuSprite, backToMenuSprite, CC_CALLBACK_0(PauseMenu::CallBackToMenuButton, this)));
+
+    for (int i = 0; i < pauseMenuItems.size(); ++i) {
+        pauseMenuItems[i]->setPosition(origin.x + i * 100 - 150, origin.y );
+        pauseMenuItems[i]->setScale(2);
+        this->pauseMenu->addChild(pauseMenuItems[i]);
     }
-
 }
 
 
 void PauseMenu::CallBackResumeButton()
 {
-    Director::getInstance()->resume();
+    Director::getInstance()->popScene();
 }
 
 void PauseMenu::CallBackToMenuButton()
@@ -50,6 +54,9 @@ void PauseMenu::CallBackToMenuButton()
 	Director::getInstance()->replaceScene(GameMenu::create());
 }
 
-
+void PauseMenu::RestartGame()
+{
+	Director::getInstance()->replaceScene(LemmingGame::create());
+}
 
 

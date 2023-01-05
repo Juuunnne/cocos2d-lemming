@@ -12,6 +12,7 @@ class LemmingGame : public Scene
 public:
     static Scene* createScene();
 
+    CREATE_FUNC(LemmingGame);
     virtual bool init();
 
 	void SpawnLemming(int x, int y, bool direction);
@@ -23,7 +24,6 @@ public:
 
     void update(float delta);
 
-    CREATE_FUNC(LemmingGame);
 private:
     Size visibleSize;
     Vec2 origin;
@@ -34,8 +34,6 @@ private:
     float time;
     //Vector saving keyboard input
     std::vector<cocos2d::EventKeyboard::KeyCode> keys;
-    //PauseMenu
-    PauseMenu* pml;
 };
 
 #endif
